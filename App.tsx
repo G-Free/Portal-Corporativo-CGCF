@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import cgcfLogo from './conteudo/imagem/Imagem1.png';
+import  logoFooter  from './conteudo/imagem/logo_sistema_5.png';
 import About from "./pages/About";
 import Legislation from "./pages/Legislation";
 import BorderMap from "./pages/BorderMap";
@@ -175,7 +176,6 @@ const Navbar: React.FC = () => {
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
-  const logoFooter = "./conteudo/imagem/logo_sistema_5.png";
   return (
     <footer className="bg-[#001f3f] text-white pt-16 md:pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
