@@ -1,0 +1,7 @@
+{
+  "name": "Portal CGCF Angola",
+  "description": "Plataforma institucional do Comité de Gestão Coordenada de Fronteiras de Angola, integrando serviços de transparência, legislação e monitorização fronteiriça conforme o Despacho Presidencial 234/20.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
