@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
-import cgcfLogo from '../conteudo/imagem/Imagem1.png';
+import cgcfLogo from './conteudo/imagem/Imagem1.png';
 import About from "./pages/About";
 import Legislation from "./pages/Legislation";
 import BorderMap from "./pages/BorderMap";
@@ -58,8 +58,6 @@ const Navbar: React.FC = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
-
-  const cgcfLogo = "./conteudo/imagem/Imagem1.png";
 
   return (
     <header className="fixed top-0 w-full z-[100]">
