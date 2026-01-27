@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
+import cgcfLogo from '../conteudo/imagem/Imagem1.png';
 import About from "./pages/About";
 import Legislation from "./pages/Legislation";
 import BorderMap from "./pages/BorderMap";
