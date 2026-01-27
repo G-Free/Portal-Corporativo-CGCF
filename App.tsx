@@ -176,7 +176,7 @@ const Navbar: React.FC = () => {
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
-  const logoFooter = "../conteudo/imagem/logo_sistema_5.png";
+  const logoFooter = "./conteudo/imagem/logo_sistema_5.png";
   return (
     <footer className="bg-[#001f3f] text-white pt-16 md:pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
