@@ -58,8 +58,7 @@ const Navbar: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const cgcfLogo = "../conteudo/imagem/Imagem1.png";
-  const logoFooter = "../conteudo/imagem/Imagem1.png";
+  const cgcfLogo = "./conteudo/imagem/Imagem1.png";
 
   return (
     <header className="fixed top-0 w-full z-[100]">
