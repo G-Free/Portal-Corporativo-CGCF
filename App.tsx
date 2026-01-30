@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Composition from './pages/Composition';
-import Coordinators from './pages/Coordinators';
-import Secretary from './pages/Secretary';
-import Reports from './pages/Reports';
-import Legislation from './pages/Legislation';
-import BorderMap from './pages/BorderMap';
-import Dashboard from './pages/Dashboard';
-import News from './pages/News';
-import NewsDetail from './pages/NewsDetail';
-import Contact from './pages/Contact';
-import AgencyDetail from './pages/AgencyDetail';
-import Corridors from './pages/Corridors';
-import { LanguageProvider, useLanguage } from './LanguageContext';
-import cgcfLogo from './conteudo/imagens/Imagem1.png';
-import logoFooter from './conteudo/imagens/logo_sistema_5.png';
+import React, { useState, useEffect } from "react";
+import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Composition from "./pages/Composition";
+import Coordinators from "./pages/Coordinators";
+import Secretary from "./pages/Secretary";
+import Reports from "./pages/Reports";
+import Legislation from "./pages/Legislation";
+import BorderMap from "./pages/BorderMap";
+import Dashboard from "./pages/Dashboard";
+import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
+import Contact from "./pages/Contact";
+import AgencyDetail from "./pages/AgencyDetail";
+import Corridors from "./pages/Corridors";
+import { LanguageProvider, useLanguage } from "./LanguageContext";
+// @ts-ignore
+import cgcfLogo from "./conteudo/imagens/Imagem1.png";
+const logoFooter = require("./conteudo/imagens/logo_sistema_5.png");
 import {
   Menu,
   X,
@@ -30,7 +31,7 @@ import {
   Phone,
   ChevronRight,
   Network,
-} from 'lucide-react';
+} from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -253,6 +254,7 @@ const Footer: React.FC = () => {
                   title="Portal MINFIN"
                   href="https://minfin.gov.ao"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
                   Portal MINFIN
@@ -295,34 +297,34 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
->>>>>>> 7f9dcbc2ce30b3a4e4b6045361300c50b8a1fbef
 
 const AppLayout: React.FC = () => {
   const location = useLocation();
   const { t, language } = useLanguage();
-  const isAdminPage = location.pathname === '/admin';
+  const isAdminPage = location.pathname === "/admin";
 
   // Atualização dinâmica do título da página (Browser Tab)
   useEffect(() => {
     const routeToTitle: Record<string, string> = {
-      '/': 'Home',
-      '/sobre': t('nav_about_who'),
-      '/composicao': t('nav_about_comp'),
-      '/coordenadores': t('nav_about_coord'),
-      '/secretario': t('nav_about_sec'),
-      '/relatorios': t('nav_about_reports'),
-      '/mapa': t('nav_borders'),
-      '/corredores': t('nav_corridors'),
-      '/legislacao': t('nav_legis'),
-      '/noticias': t('nav_news'),
-      '/contacto': t('nav_contact'),
-      '/admin': t('nav_admin')
+      "/": "Home",
+      "/sobre": t("nav_about_who"),
+      "/composicao": t("nav_about_comp"),
+      "/coordenadores": t("nav_about_coord"),
+      "/secretario": t("nav_about_sec"),
+      "/relatorios": t("nav_about_reports"),
+      "/mapa": t("nav_borders"),
+      "/corredores": t("nav_corridors"),
+      "/legislacao": t("nav_legis"),
+      "/noticias": t("nav_news"),
+      "/contacto": t("nav_contact"),
+      "/admin": t("nav_admin"),
     };
 
     // Lida com rotas dinâmicas como notícias e agências
-    let pageTitle = routeToTitle[location.pathname] || 'CGCF';
-    if (location.pathname.startsWith('/noticias/')) pageTitle = t('news_room');
-    if (location.pathname.startsWith('/agencia/')) pageTitle = t('nav_about_comp');
+    let pageTitle = routeToTitle[location.pathname] || "CGCF";
+    if (location.pathname.startsWith("/noticias/")) pageTitle = t("news_room");
+    if (location.pathname.startsWith("/agencia/"))
+      pageTitle = t("nav_about_comp");
 
     document.title = `CGCF | ${pageTitle}`;
   }, [location, t, language]);
