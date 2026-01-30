@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-
-import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Composition from './pages/Composition';
@@ -17,23 +15,8 @@ import Contact from './pages/Contact';
 import AgencyDetail from './pages/AgencyDetail';
 import Corridors from './pages/Corridors';
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-=======
-import React, { useState, useEffect } from "react";
-import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
-import Home from "./pages/Home";
-import cgcfLogo from './conteudo/imagem/Imagem1.png';
-import  logoFooter  from './conteudo/imagem/logo_sistema_5.png';
-import About from "./pages/About";
-import Legislation from "./pages/Legislation";
-import BorderMap from "./pages/BorderMap";
-import Dashboard from "./pages/Dashboard";
-import News from "./pages/News";
-import Contact from "./pages/Contact";
-import AgencyDetail from "./pages/AgencyDetail";
-import Corridors from "./pages/Corridors";
-import { LanguageProvider, useLanguage } from "./LanguageContext";
+import cgcfLogo from './conteudo/imagens/Imagem1.png';
+import logoFooter from './conteudo/imagens/logo_sistema_5.png';
 import {
   Menu,
   X,
@@ -47,7 +30,7 @@ import {
   Phone,
   ChevronRight,
   Network,
-} from "lucide-react";
+} from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
