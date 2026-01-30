@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
@@ -17,8 +18,6 @@ import Corridors from './pages/Corridors';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import cgcfLogo from './conteudo/imagens/Imagem1.png';
 import logoFooter from './conteudo/imagens/logo_sistema_5.png';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import {
   Menu,
   X,
@@ -33,35 +32,35 @@ import {
   ChevronRight,
   Network,
 } from 'lucide-react';
-
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const AppLayout: React.FC = () => {
   const location = useLocation();
   const { t, language } = useLanguage();
-  const isAdminPage = location.pathname === "/admin";
+  const isAdminPage = location.pathname === '/admin';
 
   // Atualização dinâmica do título da página (Browser Tab)
   useEffect(() => {
     const routeToTitle: Record<string, string> = {
-      "/": "Home",
-      "/sobre": t("nav_about_who"),
-      "/composicao": t("nav_about_comp"),
-      "/coordenadores": t("nav_about_coord"),
-      "/secretario": t("nav_about_sec"),
-      "/relatorios": t("nav_about_reports"),
-      "/mapa": t("nav_borders"),
-      "/corredores": t("nav_corridors"),
-      "/legislacao": t("nav_legis"),
-      "/noticias": t("nav_news"),
-      "/contacto": t("nav_contact"),
-      "/admin": t("nav_admin"),
+      '/': 'Home',
+      '/sobre': t('nav_about_who'),
+      '/composicao': t('nav_about_comp'),
+      '/coordenadores': t('nav_about_coord'),
+      '/secretario': t('nav_about_sec'),
+      '/relatorios': t('nav_about_reports'),
+      '/mapa': t('nav_borders'),
+      '/corredores': t('nav_corridors'),
+      '/legislacao': t('nav_legis'),
+      '/noticias': t('nav_news'),
+      '/contacto': t('nav_contact'),
+      '/admin': t('nav_admin')
     };
 
     // Lida com rotas dinâmicas como notícias e agências
-    let pageTitle = routeToTitle[location.pathname] || "CGCF";
-    if (location.pathname.startsWith("/noticias/")) pageTitle = t("news_room");
-    if (location.pathname.startsWith("/agencia/"))
-      pageTitle = t("nav_about_comp");
+    let pageTitle = routeToTitle[location.pathname] || 'CGCF';
+    if (location.pathname.startsWith('/noticias/')) pageTitle = t('news_room');
+    if (location.pathname.startsWith('/agencia/')) pageTitle = t('nav_about_comp');
 
     document.title = `CGCF | ${pageTitle}`;
   }, [location, t, language]);
@@ -102,3 +101,4 @@ export default function App() {
     </LanguageProvider>
   );
 }
+
