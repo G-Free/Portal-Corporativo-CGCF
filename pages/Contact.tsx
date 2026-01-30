@@ -106,21 +106,21 @@ const Contact: React.FC = () => {
                          <p className="text-slate-500 font-medium text-sm">O seu pedido foi registado no sistema central. Receberá uma notificação oficial no seu e-mail institucional.</p>
                       </div>
                     ) : (
-                      <form onSubmit={handleSubmit} className="space-y-8">
-                        <div className="grid md:grid-cols-2 gap-8">
+                      <form onSubmit={handleSubmit} className="space-y-12">
+                        <div className="grid md:grid-cols-1 gap-12">
                           <div>
-                            <label className="block text-[10px] font-black uppercase text-slate-400 mb-3 tracking-wider">Nome Completo</label>
-                            <input required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-sm px-5 py-4 text-slate-700 outline-none font-bold text-sm focus:border-[#C5A059] transition-all" />
+                            <label className="block text-[10px] font-black uppercase text-slate-400 mb-4 tracking-wider">Nome Completo</label>
+                            <input title="Nome completo" required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-sm px-5 py-4 text-slate-700 outline-none font-bold text-sm focus:border-[#C5A059] transition-all" />
                           </div>
                           <div>
                             <label className="block text-[10px] font-black uppercase text-slate-400 mb-3 tracking-wider">E-mail Institucional</label>
-                            <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-sm px-5 py-4 text-slate-700 outline-none font-bold text-sm focus:border-[#C5A059] transition-all" />
+                            <input title="E-mail institucional" required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-sm px-5 py-4 text-slate-700 outline-none font-bold text-sm focus:border-[#C5A059] transition-all" />
                           </div>
                         </div>
                         
                         <div>
                           <label className="block text-[10px] font-black uppercase text-slate-400 mb-3 tracking-wider">Assunto do Protocolo</label>
-                          <select className="w-full bg-slate-50 border border-slate-200 rounded-sm px-5 py-4 text-slate-700 outline-none font-black text-[10px] uppercase tracking-widest focus:border-[#C5A059] transition-all">
+                          <select title="Assunto do protocolo" className="w-full bg-slate-50 border border-slate-200 rounded-sm px-5 py-4 text-slate-700 outline-none font-black text-[10px] uppercase tracking-widest focus:border-[#C5A059] transition-all">
                              <option>Apoio Técnico ao Sistema</option>
                              <option>Consulta de Legislação Fronteiriça</option>
                              <option>Informação sobre Posto Específico</option>
@@ -130,7 +130,7 @@ const Contact: React.FC = () => {
 
                         <div>
                           <label className="block text-[10px] font-black uppercase text-slate-400 mb-3 tracking-wider">Exposição de Motivos</label>
-                          <textarea required rows={5} className="w-full bg-slate-50 border border-slate-200 rounded-sm px-5 py-4 text-slate-700 outline-none font-medium text-sm focus:border-[#C5A059] transition-all resize-none"></textarea>
+                          <textarea title="Exposição de motivos do protocolo" required rows={5} className="w-full bg-slate-50 border border-slate-200 rounded-sm px-5 py-4 text-slate-700 outline-none font-medium text-sm focus:border-[#C5A059] transition-all resize-none"></textarea>
                         </div>
 
                         <button type="submit" className="w-full bg-[#003366] hover:bg-[#002244] text-white font-black py-5 rounded-sm uppercase tracking-[0.2em] text-[10px] flex items-center justify-center gap-4 transition-all shadow-xl group">

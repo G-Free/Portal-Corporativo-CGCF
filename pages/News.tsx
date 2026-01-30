@@ -1,13 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { MOCK_NEWS } from '../constants';
-import { 
-  Search, 
-  Calendar, 
-  ArrowRight, 
-  Clock,
-  Filter
-} from 'lucide-react';
+import { Search, Calendar, ArrowRight, Clock, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 
@@ -31,13 +25,12 @@ const News: React.FC = () => {
 
   return (
     <div className="bg-[#f1f5f9] min-h-screen animate-in fade-in duration-700">
-      {/* Header Institucional Padrão */}
       <section className="bg-[#003366] pt-16 pb-24 border-b-4 border-[#C5A059]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-10">
-             <Link to="/" className="hover:text-white transition-colors">Início</Link>
+             <Link to="/" className="hover:text-white transition-colors">{t('nav_home')}</Link>
              <span>/</span>
-             <span className="text-[#C5A059]">Sala de Imprensa</span>
+             <span className="text-[#C5A059]">{t('news_room')}</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
@@ -62,7 +55,6 @@ const News: React.FC = () => {
         </div>
       </section>
 
-      {/* Navegação de Categorias */}
       <div className="bg-white border-b border-slate-200 sticky top-[75px] md:top-[110px] z-40">
         <div className="max-w-7xl mx-auto px-6">
            <div className="flex gap-8 overflow-x-auto no-scrollbar py-4 items-center">
@@ -71,7 +63,7 @@ const News: React.FC = () => {
                 <button 
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all border-b-2 pb-1 ${activeCategory === cat ? 'text-[#003366] border-[#C5A059]' : 'text-slate-400 border-transparent hover:text-slate-600'}`}
+                  className={`text-[10px] font-black uppercase tracking-widest whitespace-nowrap transition-all border-b-2 pb-1 ${activeCategory === cat ? 'text-[#003366] border-[#003366]' : 'text-slate-400 border-transparent hover:text-slate-600'}`}
                 >
                   {cat}
                 </button>
@@ -83,9 +75,9 @@ const News: React.FC = () => {
       <main className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredNews.map((item) => (
-            <Link key={item.id} to="/noticias" className="group flex flex-col h-full bg-white border border-slate-200 rounded-sm hover:border-[#C5A059] hover:shadow-2xl transition-all">
+            <Link key={item.id} to={`/noticias/${item.id}`} className="group flex flex-col h-full bg-white border border-slate-200 rounded-sm hover:border-[#C5A059] hover:shadow-2xl transition-all">
               <div className="relative overflow-hidden h-56">
-                <img src={item.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img title={item.title} src={item.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute top-4 left-4 bg-[#C5A059] text-white text-[8px] font-black uppercase px-3 py-1 rounded-sm shadow-lg">
                   {item.category}
                 </div>
@@ -101,22 +93,14 @@ const News: React.FC = () => {
                   {item.excerpt}
                 </p>
                 <div className="mt-auto flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-[#003366]">
-                  Ler Reportagem <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  {t('read_more')} <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </Link>
           ))}
         </div>
-
-        {filteredNews.length === 0 && (
-          <div className="text-center py-32 bg-white rounded-sm border border-slate-200">
-             <Clock className="w-16 h-16 text-slate-200 mx-auto mb-6" />
-             <h2 className="text-slate-400 text-sm font-black uppercase tracking-widest">Nenhuma notícia encontrada.</h2>
-          </div>
-        )}
       </main>
 
-      {/* Newsletter */}
       <section className="bg-[#003366] py-24 px-6 text-center border-t-8 border-[#C5A059]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter italic uppercase">{t('news_subscribe_title')}</h2>
