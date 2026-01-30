@@ -15,8 +15,8 @@ import Contact from './pages/Contact';
 import AgencyDetail from './pages/AgencyDetail';
 import Corridors from './pages/Corridors';
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import cgcfLogo from './conteudo/imagem/Imagem1.png';
-import logoFooter from './conteudo/imagem/logo_sistema_5.png';
+import cgcfLogo from './conteudo/imagens/Imagem1.png';
+import logoFooter from './conteudo/imagens/logo_sistema_5.png';
 import {
   Menu,
   X,
