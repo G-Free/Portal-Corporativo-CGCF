@@ -253,6 +253,7 @@ const Footer: React.FC = () => {
                   title="Portal MINFIN"
                   href="https://minfin.gov.ao"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
                   Portal MINFIN
@@ -295,34 +296,34 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
->>>>>>> 7f9dcbc2ce30b3a4e4b6045361300c50b8a1fbef
 
 const AppLayout: React.FC = () => {
   const location = useLocation();
   const { t, language } = useLanguage();
-  const isAdminPage = location.pathname === '/admin';
+  const isAdminPage = location.pathname === "/admin";
 
   // Atualização dinâmica do título da página (Browser Tab)
   useEffect(() => {
     const routeToTitle: Record<string, string> = {
-      '/': 'Home',
-      '/sobre': t('nav_about_who'),
-      '/composicao': t('nav_about_comp'),
-      '/coordenadores': t('nav_about_coord'),
-      '/secretario': t('nav_about_sec'),
-      '/relatorios': t('nav_about_reports'),
-      '/mapa': t('nav_borders'),
-      '/corredores': t('nav_corridors'),
-      '/legislacao': t('nav_legis'),
-      '/noticias': t('nav_news'),
-      '/contacto': t('nav_contact'),
-      '/admin': t('nav_admin')
+      "/": "Home",
+      "/sobre": t("nav_about_who"),
+      "/composicao": t("nav_about_comp"),
+      "/coordenadores": t("nav_about_coord"),
+      "/secretario": t("nav_about_sec"),
+      "/relatorios": t("nav_about_reports"),
+      "/mapa": t("nav_borders"),
+      "/corredores": t("nav_corridors"),
+      "/legislacao": t("nav_legis"),
+      "/noticias": t("nav_news"),
+      "/contacto": t("nav_contact"),
+      "/admin": t("nav_admin"),
     };
 
     // Lida com rotas dinâmicas como notícias e agências
-    let pageTitle = routeToTitle[location.pathname] || 'CGCF';
-    if (location.pathname.startsWith('/noticias/')) pageTitle = t('news_room');
-    if (location.pathname.startsWith('/agencia/')) pageTitle = t('nav_about_comp');
+    let pageTitle = routeToTitle[location.pathname] || "CGCF";
+    if (location.pathname.startsWith("/noticias/")) pageTitle = t("news_room");
+    if (location.pathname.startsWith("/agencia/"))
+      pageTitle = t("nav_about_comp");
 
     document.title = `CGCF | ${pageTitle}`;
   }, [location, t, language]);
