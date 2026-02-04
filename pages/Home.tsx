@@ -88,7 +88,7 @@ const Home: React.FC = () => {
   return (
     <div className="animate-in fade-in duration-700">
       {/* Hero Section */}
-      <section className="relative h-[750px] bg-slate-900 overflow-hidden">
+      <section className="relative h-[670px] bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <img
             title="Business Handshake"
@@ -99,14 +99,6 @@ const Home: React.FC = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="bg-[#C5A059] text-white text-[10px] font-black px-4 py-2 rounded-sm uppercase tracking-widest shadow-lg">
-                {t("gov_angola")}
-              </div>
-              <div className="bg-white/10 backdrop-blur-md text-white text-[10px] font-black px-4 py-2 rounded-sm uppercase tracking-widest border border-white/20">
-                {t("hero_legal")}
-              </div>
-            </div>
             <h1 className="text-white text-4xl md:text-7xl font-black leading-[1.1] mb-8 tracking-tighter uppercase italic">
               {t("hero_title").split(" ")[0]} <br />
               <span className="text-[#C5A059]">
@@ -140,10 +132,10 @@ const Home: React.FC = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4 text-[#003366]/40 uppercase text-[9px] font-black tracking-[0.4em]">
               <Handshake className="w-4 h-4 text-[#C5A059]" />
-              Cooperação Multilateral & Parceiros Externos
+              Cooperação Multilateral
             </div>
             <h2 className="text-[#003366] text-3xl font-black uppercase italic tracking-tighter">
-              Rede de Apoio Estratégico
+              Apoio Estratégico
             </h2>
           </div>
 
