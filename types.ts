@@ -40,9 +40,22 @@ export interface Agency {
   ministry: string;
 }
 
-export interface DashboardStats {
-  totalPosts: number;
-  openPercentage: number;
-  activeAgencies: number;
-  monthlyVisitors: number;
+export interface AuditLog {
+  id: string;
+  timestamp: string;
+  user: string;
+  action: 'LOGIN' | 'SYNC' | 'CREATE' | 'UPDATE' | 'DELETE' | 'EXPORT';
+  details: string;
+  ip: string;
+  severity: 'INFO' | 'WARNING' | 'CRITICAL';
+}
+
+export interface DigitalAsset {
+  id: string;
+  title: string;
+  category: 'INFRA' | 'SECURITY' | 'LOGISTICS' | 'GOV';
+  url: string;
+  resolution: string;
+  uploadDate: string;
+  fileType?: 'JPG' | 'PNG' | 'RAW';
 }

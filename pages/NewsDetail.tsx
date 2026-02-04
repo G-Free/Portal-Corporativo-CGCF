@@ -39,7 +39,7 @@ const NewsDetail: React.FC = () => {
             <ArrowLeft className="w-4 h-4" /> {t('news_back')}
           </Link>
           <div className="flex items-center gap-4">
-            <button className="p-2 text-slate-400 hover:text-[#003366] transition-colors">
+            <button title={t('news_share')} className="p-2 text-slate-400 hover:text-[#003366] transition-colors">
               <Share2 className="w-4 h-4" />
             </button>
           </div>
@@ -136,7 +136,7 @@ const NewsDetail: React.FC = () => {
                 className="group flex flex-col h-full border border-slate-100 hover:border-[#C5A059] transition-all"
               >
                 <div className="h-40 overflow-hidden bg-slate-200">
-                  <img src={item.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img title={item.title} src={item.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
                   <span className="text-[8px] font-black uppercase text-[#C5A059] mb-2 block">{item.category}</span>

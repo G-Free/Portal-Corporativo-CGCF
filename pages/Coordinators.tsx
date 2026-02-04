@@ -2,6 +2,8 @@ import React from "react";
 import { Quote, ShieldCheck, Award, ArrowLeft, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../LanguageContext";
+import minintImage from "../conteudo/imagens/minint.jpg";
+import ministerImage from "../conteudo/imagens/ministra_financas_mensagem.jpg";
 
 const Coordinators: React.FC = () => {
   const { t } = useLanguage();
@@ -46,7 +48,7 @@ const Coordinators: React.FC = () => {
                     <div className="absolute -inset-4 border border-slate-100 rounded-sm group-hover:border-[#C5A059]/30 transition-colors"></div>
                     <div className="w-48 h-60 bg-slate-400 rounded-sm overflow-hidden border-4 border-white shadow-lg relative z-10 ">
                       <img
-                        src="../conteudo/imagens/ministra_financas_mensagem.jpg"
+                        src={ministerImage}
                         className="w-full h-full object-cover"
                         alt="Dra. Vera Daves de Sousa"
                       />
@@ -77,7 +79,7 @@ const Coordinators: React.FC = () => {
                     <div className="absolute -inset-4 border border-slate-100 rounded-sm group-hover:border-[#C5A059]/30 transition-colors"></div>
                     <div className="w-48 h-60 bg-slate-400 rounded-sm overflow-hidden border-4 border-white shadow-lg relative z-10 ">
                       <img
-                        src="../conteudo/imagens/minint.jpg"
+                        src={minintImage}
                         className="w-full h-full object-cover"
                         alt="Dr. Manuel Gomes Conceição Homem"
                       />

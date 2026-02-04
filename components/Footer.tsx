@@ -12,10 +12,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div>
-            <img
-              src={logo}
-              alt="Logo"
-              className="w-50 h-24 text-[#C5A059] mb-6" />
+            <img src={logo} alt="Logo" className="w-32 md:w-40 mb-6" />
             <p className="text-slate-400 text-sm leading-relaxed">
               {t("footer_desc")}
             </p>
