@@ -87,7 +87,7 @@ const Coordinators: React.FC = () => {
                   </div>
                   <div className="text-center">
                     <h3 className="text-[#003366] text-2xl lg:text-3xl font-black uppercase italic tracking-tighter mb-2">
-                      Dr. Manuel Gomes Conceição Homem
+                      Eng. Manuel Conceição Homem
                     </h3>
                     <div className="inline-block bg-[#C5A059] text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
                       {t("coord_adjunct")}
