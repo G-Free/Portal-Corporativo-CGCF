@@ -53,7 +53,7 @@ const Home: React.FC = () => {
   return (
     <div className="animate-in fade-in duration-700">
       {/* Hero Section */}
-      <section className="relative h-[650px] bg-slate-900 overflow-hidden">
+      <section className="relative h-[750px] bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <img
             title="Business Handshake"
