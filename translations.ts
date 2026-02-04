@@ -43,7 +43,7 @@ export const translations = {
     coord_subtitle: 'Mensagens da coordenação sobre a visão de futuro.',
     coord_back: 'Voltar à Identidade Estratégica',
     coord_general: 'Coordenador Geral do CGCF',
-    coord_adjunct: 'Coordenadora Adjunto',
+    coord_adjunct: 'Coordenador Adjunto',
     coord_quote_general: 'O DP 22/26, marca uma nova era na cooperação institucional em benéfico do controle das nossas fronteiras.',
     coord_quote_adjunct: 'A interoperabilidade dos sistemas, é o motor de um controle de fronteiras moderno.',
     sec_title: 'Mensagem do Secretário Central',
