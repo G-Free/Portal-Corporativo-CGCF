@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../LanguageContext";
+import secretarioimage from '../conteudo/imagens/image.jpg';
 
 const Secretary: React.FC = () => {
   const { t } = useLanguage();
@@ -37,7 +38,7 @@ const Secretary: React.FC = () => {
           <div className="w-full md:w-72 shrink-0">
             <div className="w-full aspect-[3/4] bg-slate-100 rounded-sm border-b-8 border-[#C5A059] shadow-2xl overflow-hidden mb-6">
               <img
-                src="../conteudo/imagens/image.jpg"
+                src={secretarioimage}
                 className="w-full h-full object-cover"
                 alt="Dr. José Leiria"
               />
