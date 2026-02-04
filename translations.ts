@@ -44,7 +44,7 @@ export const translations = {
     coord_subtitle: 'Mensagens da coordenação sobre a visão de futuro.',
     coord_back: 'Voltar à Identidade Estratégica',
     coord_general: 'Coordenador Geral do CGCF',
-    coord_adjunct: 'Coordenadora Adjunta',
+    coord_adjunct: 'Coordenadora Adjunto',
     coord_quote_fonseca: 'O novo Decreto n.º 22/26 marca uma nova era para a nossa logística nacional.',
     coord_quote_helena: 'A modernização das nossas fronteiras é uma reforma estrutural digital.',
     sec_title: 'Mensagem do Secretário Central',
