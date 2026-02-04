@@ -2,24 +2,20 @@ import React, { useEffect, useState } from "react";
 import { MOCK_NEWS } from "../constants";
 import {
   ArrowRight,
-  ChevronRight,
   Shield,
   Activity,
-  MapPin,
   ExternalLink,
-  BookOpen,
   Navigation,
-  FileText,
-  Newspaper,
   Calendar,
-  Mail,
   Network,
-  Truck,
-  Anchor,
-  Zap,
   Award,
-  Building2,
   Globe,
+  Handshake,
+  Landmark,
+  Building2,
+  Waves,
+  Banknote,
+  Search,
 } from "lucide-react";
 import { getLatestBorderInsights } from "../services/geminiService";
 import { Link } from "react-router-dom";
@@ -49,6 +45,45 @@ const Home: React.FC = () => {
     };
     fetchInsight();
   }, [language]);
+
+  const partners = [
+    {
+      name: "Banco Mundial",
+      icon: Landmark,
+      desc: t("partner_wb_desc"),
+      url: "https://www.worldbank.org",
+    },
+    {
+      name: "WCO",
+      icon: Globe,
+      desc: t("partner_wco_desc"),
+      url: "http://www.wcoomd.org",
+    },
+    {
+      name: "Embaixada do Japão",
+      icon: Building2,
+      desc: t("partner_japan_desc"),
+      url: "https://www.angola.emb-japan.go.jp",
+    },
+    {
+      name: "UNODC",
+      icon: Shield,
+      desc: t("partner_unodc_desc"),
+      url: "https://www.unodc.org",
+    },
+    {
+      name: "IMA",
+      icon: Waves,
+      desc: t("partner_ima_desc"),
+      url: "https://www.imo.org",
+    },
+    {
+      name: "GAFI",
+      icon: Banknote,
+      desc: t("partner_gafi_desc"),
+      url: "https://www.fatf-gafi.org",
+    },
+  ];
 
   return (
     <div className="animate-in fade-in duration-700">
@@ -99,56 +134,43 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Quick Services Bar */}
-      <section className="bg-white border-b border-slate-100 py-12 relative z-20">
+      {/* Parceiros Externos Section */}
+      <section className="bg-white border-b border-slate-100 py-24 relative z-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-            {[
-              {
-                icon: Navigation,
-                name: t("nav_borders"),
-                path: "/mapa",
-                color: "text-[#003366]",
-              },
-              {
-                icon: Network,
-                name: t("nav_corridors"),
-                path: "/corredores",
-                color: "text-[#C5A059]",
-              },
-              {
-                icon: BookOpen,
-                name: t("nav_legis"),
-                path: "/legislacao",
-                color: "text-slate-700",
-              },
-              {
-                icon: Newspaper,
-                name: t("nav_news"),
-                path: "/noticias",
-                color: "text-slate-700",
-              },
-              {
-                icon: Mail,
-                name: t("nav_contact"),
-                path: "/contacto",
-                color: "text-slate-700",
-              },
-            ].map((item, i) => (
-              <Link
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 mb-4 text-[#003366]/40 uppercase text-[9px] font-black tracking-[0.4em]">
+              <Handshake className="w-4 h-4 text-[#C5A059]" />
+              Cooperação Multilateral & Parceiros Externos
+            </div>
+            <h2 className="text-[#003366] text-3xl font-black uppercase italic tracking-tighter">
+              Rede de Apoio Estratégico
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {partners.map((partner, i) => (
+              <a
                 key={i}
-                to={item.path}
-                className="group flex flex-col items-center text-center"
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col h-full bg-slate-50 border border-slate-100 p-8 rounded-sm hover:bg-white hover:shadow-2xl hover:border-[#C5A059] transition-all duration-500"
               >
-                <div className="w-16 h-16 bg-slate-50 rounded-sm flex items-center justify-center mb-4 group-hover:bg-[#003366] group-hover:text-white transition-all shadow-sm border border-slate-100">
-                  <item.icon
-                    className={`w-6 h-6 ${item.color} group-hover:text-white transition-colors`}
-                  />
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="w-14 h-14 bg-white border border-slate-100 rounded-sm flex items-center justify-center group-hover:bg-[#003366] transition-all duration-500 shadow-sm">
+                    <partner.icon className="w-7 h-7 text-[#003366] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-slate-900 font-black text-[11px] tracking-widest uppercase leading-tight group-hover:text-[#003366] transition-colors">
+                    {partner.name}
+                  </span>
                 </div>
-                <span className="text-[9px] font-black uppercase text-slate-700 tracking-widest group-hover:text-[#003366] transition-colors">
-                  {item.name}
-                </span>
-              </Link>
+                <p className="text-slate-500 text-xs font-medium leading-relaxed italic mb-8 flex-grow">
+                  {partner.desc}
+                </p>
+                <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-[#C5A059] transition-colors">
+                  Visitar Website <ExternalLink className="w-3.5 h-3.5" />
+                </div>
+              </a>
             ))}
           </div>
         </div>
