@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../LanguageContext";
-import secretarioimage from '../conteudo/imagens/image.jpg';
+import secretarioimage from '../conteudo/imagens/secretario central.jpeg';
 
 const Secretary: React.FC = () => {
   const { t } = useLanguage();
@@ -40,12 +40,12 @@ const Secretary: React.FC = () => {
               <img
                 src={secretarioimage}
                 className="w-full h-full object-cover"
-                alt="Dr. José Leiria"
+                alt="Dr. Braulio Fernandes"
               />
             </div>
             <div className="text-center md:text-left">
               <h3 className="text-[#003366] text-xl font-black uppercase italic tracking-tight">
-                Dr. José Leiria
+                Dr. Braulio Fernandes
               </h3>
               <p className="text-[#C5A059] text-[10px] font-black uppercase tracking-widest mt-1">
                 {t("nav_about_sec")}
