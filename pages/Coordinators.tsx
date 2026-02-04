@@ -66,7 +66,7 @@ const Coordinators: React.FC = () => {
                 <div className="relative flex-grow">
                   <Quote className="absolute -left-6 -top-10 w-20 h-20 text-slate-50 opacity-50 -z-0" />
                   <p className="relative z-10 text-slate-700 text-lg lg:text-xl font-medium leading-relaxed italic text-center px-4">
-                    "{t("coord_quote_fonseca")}"
+                    "{t("coord_quote_general")}"
                   </p>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const Coordinators: React.FC = () => {
                       <img
                         src={minintImage}
                         className="w-full h-full object-cover"
-                        alt="Dr. Manuel Gomes Conceição Homem"
+                        alt="Dr. Manuel Conceição Homem"
                       />
                     </div>
                   </div>
@@ -97,7 +97,7 @@ const Coordinators: React.FC = () => {
                 <div className="relative flex-grow">
                   <Quote className="absolute -left-6 -top-10 w-20 h-20 text-slate-50 opacity-50 -z-0" />
                   <p className="relative z-10 text-slate-700 text-lg lg:text-xl font-medium leading-relaxed italic text-center px-4">
-                    "{t("coord_quote_helena")}"
+                    "{t("coord_quote_adjunct")}"
                   </p>
                 </div>
               </div>
