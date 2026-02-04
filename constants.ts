@@ -194,6 +194,6 @@ export const MOCK_NEWS: NewsItem[] = [
       "Equipas conjuntas de inspecção passam a utilizar o novo protocolo de segurança regional.",
     date: "28 Janeiro 2026",
     category: "Logística",
-    image: "/conteudo/imagens/noticias/monitorizacao_corredor_lobito.jpeg",
+    image: "conteudo/imagens/noticias/monitorizacao_corredor_lobito.jpeg",
   },
 ];
