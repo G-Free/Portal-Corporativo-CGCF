@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 import { DigitalAsset } from '../types';
-import logo from "../conteudo/imagens/imagem1_logo.png";
+import logo from "../conteudo/imagens/Imagem1_logo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
