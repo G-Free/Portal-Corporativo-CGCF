@@ -185,7 +185,7 @@ export const MOCK_NEWS: NewsItem[] = [
       "Nova fase de gestão coordenada foca-se na interoperabilidade digital total entre SME, AGT e MINSA.",
     date: "02 Fevereiro 2026",
     category: "Institucional",
-    image: new URL(".conteudo/imagens/noticias/decreto_operacionalizacao.jpeg", import.meta.url).href,
+    image: new URL("./conteudo/imagens/noticias/decreto_operacionalizacao.jpeg", import.meta.url).href,
   },
   {
     id: "n2",
