@@ -185,7 +185,7 @@ export const MOCK_NEWS: NewsItem[] = [
       "Nova fase de gestão coordenada foca-se na interoperabilidade digital total entre SME, AGT e MINSA.",
     date: "02 Fevereiro 2026",
     category: "Institucional",
-    image: new URL("./conteudo/imagens/decreto_operacionalizacao.jpeg", import.meta.url).href,
+    image: new URL(".conteudo/imagens/noticias/decreto_operacionalizacao.jpeg", import.meta.url).href,
   },
   {
     id: "n2",
@@ -194,6 +194,6 @@ export const MOCK_NEWS: NewsItem[] = [
       "Equipas conjuntas de inspecção passam a utilizar o novo protocolo de segurança regional.",
     date: "28 Janeiro 2026",
     category: "Logística",
-    image: new URL("/conteudo/imagens/decreto_operacionalizacao.jpeg", import.meta.url).href,
+    image: new URL("/conteudo/imagens/noticias/monitorizacao_corredor_lobito.jpeg", import.meta.url).href,
   },
 ];
