@@ -196,4 +196,13 @@ export const MOCK_NEWS: NewsItem[] = [
     category: "Logística",
     image: new URL("/conteudo/imagens/noticias/monitorizacao_corredor_lobito.jpeg", import.meta.url).href,
   },
+   {
+    id: "n3",
+    title: "Visita Preparatória para a Inauguração do Posto Fronteiriço do Luvo",
+    excerpt:
+      "Deslocação técnica para alinhamento institucional, distribuição de compartimentos e alocação de recursos, no âmbito da inauguração do Posto Fronteiriço do Luvo, reforçando a gestão coordenada de fronteiras e a eficiência operacional no terreno.",
+    date: "19 Fevereiro 2026",
+    category: "Institucional",
+    image: new URL("/conteudo/imagens/noticias/visita ao luvo.jpeg", import.meta.url).href,
+  },
 ];
