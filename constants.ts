@@ -185,6 +185,7 @@ export const MOCK_NEWS: NewsItem[] = [
       "Nova fase de gestão coordenada foca-se na interoperabilidade digital total entre SME, AGT e MINSA.",
     date: "02 Fevereiro 2026",
     category: "Institucional",
+    Descric:" Luanda — No âmbito da implementação estratégica das diretrizes estabelecidas pelo novo Decreto Presidencial n.º 22/26, o Comité de Gestão Coordenada de Fronteiras (CGCF) informa a operacionalização de novas etapas de modernização.",
     image: new URL("./conteudo/imagens/noticias/decreto_operacionalizacao.jpeg", import.meta.url).href,
   },
   {
@@ -194,6 +195,7 @@ export const MOCK_NEWS: NewsItem[] = [
       "Equipas conjuntas de inspecção passam a utilizar o novo protocolo de segurança regional.",
     date: "28 Janeiro 2026",
     category: "Logística",
+     Descric:" Luanda — No âmbito da implementação estratégica das diretrizes estabelecidas pelo novo Decreto Presidencial n.º 22/26, o Comité de Gestão Coordenada de Fronteiras (CGCF) informa a operacionalização de novas etapas de modernização.",
     image: new URL("/conteudo/imagens/noticias/monitorizacao_corredor_lobito.jpeg", import.meta.url).href,
   },
    {
@@ -203,6 +205,7 @@ export const MOCK_NEWS: NewsItem[] = [
       "Deslocação técnica para alinhamento institucional, distribuição de compartimentos e alocação de recursos, no âmbito da inauguração do Posto Fronteiriço do Luvo, reforçando a gestão coordenada de fronteiras e a eficiência operacional no terreno.",
     date: "19 Fevereiro 2026",
     category: "Institucional",
+      Descric:" Uma delegação central realizou uma visita técnica ao Posto Fronteiriço do Luvo com vista à preparação da sua inauguração, assegurando o alinhamento institucional, operacional e logístico entre os órgãos intervenientes no processo de gestão coordenada de fronteiras.",
     image: new URL("/conteudo/imagens/noticias/visita ao luvo.jpeg", import.meta.url).href,
   },
 ];
