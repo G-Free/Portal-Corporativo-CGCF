@@ -87,7 +87,7 @@ const NewsDetail: React.FC = () => {
           
           <h3 className="text-[#003366] text-xl font-black uppercase italic tracking-tight mb-6 mt-12">Integração Interinstitucional</h3>
           <p className="text-slate-700 text-lg leading-relaxed mb-8 font-medium">
-            As ações conjuntas entre a Administração Geral Tributária (AGT), o Serviço de Migração e Estrangeiros (SME) e os demais órgãos competentes visam a eliminação de redundâncias burocráticas e a aceleração do fluxo de mercadorias e pessoas nos principais corredores logísticos nacionais.
+            {newsItem.Corp}
           </p>
 
           <div className="bg-slate-50 border border-slate-200 p-8 rounded-sm my-12 flex flex-col md:flex-row gap-8 items-center">
@@ -103,7 +103,7 @@ const NewsDetail: React.FC = () => {
           </div>
 
           <p className="text-slate-700 text-lg leading-relaxed mb-8 font-medium">
-            Este avanço consolida o compromisso do Executivo angolano com a transparência e a eficiência na gestão das fronteiras, potencializando o ambiente de negócios e a arrecadação de receitas para o Estado.
+           {newsItem.Concl} 
           </p>
         </div>
 
