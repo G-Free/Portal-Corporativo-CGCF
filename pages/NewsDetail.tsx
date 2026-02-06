@@ -82,7 +82,7 @@ const NewsDetail: React.FC = () => {
         {/* Corpo da Notícia (Conteúdo Mock) */}
         <div className="prose prose-slate max-w-none mb-20">
           <p className="text-slate-700 text-lg leading-relaxed mb-8 font-medium">
-            Luanda — No âmbito da implementação estratégica das diretrizes estabelecidas pelo novo Decreto Presidencial n.º 22/26, o Comité de Gestão Coordenada de Fronteiras (CGCF) informa a operacionalização de novas etapas de modernização.
+            {newsItem.Descric}          
           </p>
           
           <h3 className="text-[#003366] text-xl font-black uppercase italic tracking-tight mb-6 mt-12">Integração Interinstitucional</h3>
