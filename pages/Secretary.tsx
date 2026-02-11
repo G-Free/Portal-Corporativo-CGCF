@@ -47,7 +47,7 @@ const Secretary: React.FC = () => {
               <h3 className="text-[#003366] text-xl font-black uppercase italic tracking-tight">
                 Dr. Braulio Fernandes
               </h3>
-              <p className="text-[#C5A059] text-[10px] font-black uppercase tracking-widest mt-1">
+              <p className="text-[#003366] text-[10px] font-black uppercase tracking-widest mt-1">
                 {t("nav_about_sec")}
               </p>
             </div>
