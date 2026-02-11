@@ -55,7 +55,7 @@ const Coordinators: React.FC = () => {
                     </div>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[#003366] text-2xl lg:text-3xl font-black uppercase italic tracking-tighter mb-2">
+                    <h3 className="text-[#003366] text-2xl lg:text-2xl font-black uppercase italic tracking-tighter mb-2">
                       Dra. Vera Daves de Sousa
                     </h3>
                     <div className="inline-block bg-[#003366] text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
@@ -66,7 +66,7 @@ const Coordinators: React.FC = () => {
                 <div className="relative flex-grow">
                   <Quote className="absolute -left-6 -top-10 w-20 h-20 text-slate-50 opacity-50 -z-0" />
                   <p className="relative z-10 text-slate-700 text-lg lg:text-xl font-medium leading-relaxed italic text-center px-4">
-                    "{t("coord_quote_fonseca")}"
+                    "{t("coord_quote_general")}"
                   </p>
                 </div>
               </div>
@@ -81,15 +81,15 @@ const Coordinators: React.FC = () => {
                       <img
                         src={minintImage}
                         className="w-full h-full object-cover"
-                        alt="Dr. Manuel Gomes Conceição Homem"
+                        alt="Dr. Manuel Conceição Homem"
                       />
                     </div>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[#003366] text-2xl lg:text-3xl font-black uppercase italic tracking-tighter mb-2">
-                      Dr. Manuel Gomes Conceição Homem
+                    <h3 className="text-[#003366] text-2xl lg:text-2xl font-black uppercase italic tracking-tighter mb-2">
+                      Eng. Manuel Conceição Homem
                     </h3>
-                    <div className="inline-block bg-[#C5A059] text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
+                    <div className="inline-block bg-[#003366] text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
                       {t("coord_adjunct")}
                     </div>
                   </div>
@@ -97,7 +97,7 @@ const Coordinators: React.FC = () => {
                 <div className="relative flex-grow">
                   <Quote className="absolute -left-6 -top-10 w-20 h-20 text-slate-50 opacity-50 -z-0" />
                   <p className="relative z-10 text-slate-700 text-lg lg:text-xl font-medium leading-relaxed italic text-center px-4">
-                    "{t("coord_quote_helena")}"
+                    "{t("coord_quote_adjunct")}"
                   </p>
                 </div>
               </div>

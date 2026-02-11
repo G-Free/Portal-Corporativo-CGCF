@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
   Menu, X, Shield, ChevronDown, ChevronRight, LayoutGrid, 
-  Users, Award, FileText
+  Users, Award, FileText, Cpu, GitBranch
 } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 import { DigitalAsset } from '../types';
-import logo from "../conteudo/imagens/imagem1_logo.png";
+import logo from "../conteudo/imagens/Imagem1_logo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,14 +35,16 @@ function Navbar() {
       dropdown: [
         { name: t('nav_about_who'), path: '/sobre', icon: Shield, desc: t('nav_desc_who') },
         { name: t('nav_about_comp'), path: '/composicao', icon: LayoutGrid, desc: t('nav_desc_comp') },
+        { name: t('nav_about_organogram'), path: '/organigrama', icon: GitBranch, desc: t('nav_desc_organogram') },
         { name: t('nav_about_coord'), path: '/coordenadores', icon: Users, desc: t('nav_desc_coord') },
         { name: t('nav_about_sec'), path: '/secretario', icon: Award, desc: t('nav_desc_sec') },
-        { name: t('nav_about_reports'), path: '/relatorios', icon: FileText, desc: t('nav_desc_reports') },
+        { name: t('nav_borders'), path: '/mapa', icon: LayoutGrid, desc: t('nav_desc_assets') },
       ]
     },
-    { name: t('nav_borders'), path: '/mapa' },
+    { name: t('nav_interop'), path: '/interoperabilidade' },
     { name: t('nav_corridors'), path: '/corredores' },
-    { name: t('nav_legis'), path: '/legislacao' },
+    { name: t('nav_legis'), path: '/legislacao' }, 
+    { name: t('nav_about_reports'), path: '/relatorios' },   
     { name: t('nav_news'), path: '/noticias' },
     { name: t('nav_contact'), path: '/contacto' },
   ];

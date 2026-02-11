@@ -185,7 +185,10 @@ export const MOCK_NEWS: NewsItem[] = [
       "Nova fase de gestão coordenada foca-se na interoperabilidade digital total entre SME, AGT e MINSA.",
     date: "02 Fevereiro 2026",
     category: "Institucional",
-    image: "/conteudo/imagens/noticias/decreto_operacionalizacao.jpeg",
+    Descric:" Luanda — No âmbito da implementação estratégica das diretrizes estabelecidas pelo novo Decreto Presidencial n.º 22/26, o Comité de Gestão Coordenada de Fronteiras (CGCF) informa a operacionalização de novas etapas de modernização.",
+    Corp:"As ações conjuntas entre a Administração Geral Tributária (AGT), o Serviço de Migração e Estrangeiros (SME) e os demais órgãos competentes visam a eliminação de redundâncias burocráticas e a aceleração do fluxo de mercadorias e pessoas nos principais corredores logísticos nacionais.",
+    Concl:"Este avanço consolida o compromisso do Executivo angolano com a transparência e a eficiência na gestão das fronteiras, potencializando o ambiente de negócios e a arrecadação de receitas para o Estado.",
+    image: new URL("./conteudo/imagens/noticias/decreto_operacionalizacao.jpeg", import.meta.url).href,
   },
   {
     id: "n2",
@@ -194,6 +197,24 @@ export const MOCK_NEWS: NewsItem[] = [
       "Equipas conjuntas de inspecção passam a utilizar o novo protocolo de segurança regional.",
     date: "28 Janeiro 2026",
     category: "Logística",
-    image: "/conteudo/imagens/noticias/monitorizacao_corredor_lobito.jpeg",
+    Descric:" No âmbito da modernização da gestão fronteiriça, o Comité de Gestão Coordenada de Fronteiras reforça a monitorização do Corredor do Lobito, através da implementação de novos protocolos de segurança e de atuação conjunta entre os principais órgãos do Estado.",
+    Corp:"Luanda — No quadro da implementação estratégica das diretrizes estabelecidas pelo Decreto Presidencial n.º 22/26, o Comité de Gestão Coordenada de Fronteiras (CGCF) deu início a novas etapas de modernização dos mecanismos de monitorização e controlo do Corredor do Lobito, um dos principais eixos logísticos do país. As ações em curso envolvem equipas conjuntas de inspeção integradas pela Administração Geral Tributária (AGT), pelo Serviço de Migração e Estrangeiros (SME) e por outros órgãos competentes, que passam a operar com base num novo protocolo regional de segurança. Esta abordagem integrada tem como objetivo reforçar o controlo, aumentar a previsibilidade dos processos e garantir maior fluidez no trânsito de mercadorias e pessoas. A implementação destas medidas visa igualmente a eliminação de redundâncias burocráticas, a melhoria da articulação interinstitucional e a aceleração dos procedimentos operacionais ao longo do corredor logístico, alinhando-se às boas práticas internacionais de facilitação do comércio e segurança fronteiriça. O Corredor do Lobito assume um papel estratégico no escoamento de mercadorias, na integração regional e no fortalecimento da cadeia logística nacional, sendo considerado um vetor-chave para o desenvolvimento económico e a competitividade do país.",
+    Concl:"Com o reforço da monitorização e a adoção de protocolos de segurança mais eficazes, o Executivo angolano consolida o seu compromisso com a transparência, a eficiência e a modernização da gestão das fronteiras. Estas ações contribuem diretamente para a melhoria do ambiente de negócios, o aumento da arrecadação de receitas e o fortalecimento da confiança dos operadores económicos nos corredores logísticos nacionais",
+    image: new URL("/conteudo/imagens/noticias/monitorizacao_corredor_lobito.jpeg", import.meta.url).href,
+  },
+   {
+    id: "n3",
+    title: "Visita Preparatória para a Inauguração do Posto Fronteiriço do Luvo",
+    excerpt:
+      "Deslocação técnica para alinhamento institucional, distribuição de compartimentos e alocação de recursos, no âmbito da inauguração do Posto Fronteiriço do Luvo, reforçando a gestão coordenada de fronteiras e a eficiência operacional no terreno.",
+    date: "19 Fevereiro 2026",
+    category: "Institucional",
+    Descric:
+      " Uma delegação central realizou uma visita técnica ao Posto Fronteiriço do Luvo com vista à preparação da sua inauguração, assegurando o alinhamento institucional, operacional e logístico entre os órgãos intervenientes no processo de gestão coordenada de fronteiras.",
+    Corp:
+      "No âmbito da inauguração do Posto Fronteiriço do Luvo, agendada para o próximo dia 19 de fevereiro, uma delegação central deslocou-se à província do Zaire com o objetivo de acompanhar e alinhar os trabalhos preparatórios para a entrada em funcionamento desta importante infraestrutura fronteiriça. A visita teve como foco principal a articulação entre os diferentes órgãos que integram o Comité de Gestão Coordenada de Fronteiras, garantindo uma distribuição adequada dos compartimentos, bem como a correta alocação dos recursos humanos,materiais, meios e equipamentos necessários para o pleno funcionamento do posto. O Posto Fronteiriço do Luvo foi concebido como uma infraestrutura integrada, dispondo de espaços técnicos e operacionais, além de áreas de apoio como dormitórios, refeitório e outras facilidades destinadas a assegurar melhores condições de trabalho e acomodação aos funcionários destacados na jurisdição.Esta iniciativa visa reforçar a coordenação interinstitucional no terreno, melhorar a qualidade da prestação de serviços aos utentes e consolidar o modelo de gestão coordenada de fronteiras, alinhado com as melhores práticas de controlo, segurança e facilitação do tráfego transfronteiriço em Angola.A ação decorreu em estreita colaboração com os órgãos da província do Zaire e representa um passo estratégico para o sucesso do ato inaugural e para a operacionalização eficiente do Posto Fronteiriço do Luvo.",
+    Concl:
+      "om esta visita técnica, ficam asseguradas as condições necessárias para uma inauguração organizada e funcional do Posto Fronteiriço do Luvo, reforçando o compromisso das instituições envolvidas com a eficiência operacional, a cooperação interinstitucional e a modernização da gestão de fronteiras. A entrada em funcionamento desta infraestrutura representa um avanço significativo na melhoria do controlo fronteiriço, na facilitação dos fluxos transfronteiriços e na prestação de serviços públicos de qualidade, em alinhamento com os objetivos estratégicos do Estado angolano.",
+    image: new URL("/conteudo/imagens/noticias/visita ao luvo.jpeg", import.meta.url).href,
   },
 ];

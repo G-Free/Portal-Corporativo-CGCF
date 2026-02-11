@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import NewsTicker from './NewsTicker';
 import { useLanguage } from '../LanguageContext';
 
 interface MainLayoutProps {
@@ -52,7 +53,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
       {/* Spacer para compensar o Navbar fixo */}
-      <div className="h-[75px] md:h-[110px]"></div>
+      <div className="h-[75px] md:h-[120px]"></div>
+      
+      {/* Banner rotativo de notícias e informações */}
+      <NewsTicker />
+
       <main className="flex-grow">
         {children}
       </main>

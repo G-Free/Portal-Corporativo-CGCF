@@ -4,11 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="./conteudo/imagens/Imagem1.svg"
-    />
+    <link rel="icon" type="image/svg+xml" href="/conteudo/imagem/Imagem1_logo.png" />
     <title>CGCF - Comité de Gestão Coordenada de Fronteiras</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -20,6 +16,19 @@
         .border-minfin-gold { border-color: #C5A059; }
         .hover-gold:hover { color: #C5A059; }
         ::selection { background-color: #003366; color: white; }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
     </style>
 <script type="importmap">
 {

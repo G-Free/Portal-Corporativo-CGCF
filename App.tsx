@@ -1,24 +1,25 @@
-
-import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import { LanguageProvider } from './LanguageContext';
-import MainLayout from './components/MainLayout';
+import React from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./LanguageContext";
+import MainLayout from "./components/MainLayout";
 
 // Páginas
-import Home from './pages/Home';
-import About from './pages/About';
-import Composition from './pages/Composition';
-import Coordinators from './pages/Coordinators';
-import Secretary from './pages/Secretary';
-import Reports from './pages/Reports';
-import Legislation from './pages/Legislation';
-import BorderMap from './pages/BorderMap';
-import Dashboard from './pages/Dashboard';
-import News from './pages/News';
-import NewsDetail from './pages/NewsDetail';
-import Contact from './pages/Contact';
-import AgencyDetail from './pages/AgencyDetail';
-import Corridors from './pages/Corridors';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Composition from "./pages/Composition";
+import Coordinators from "./pages/Coordinators";
+import Secretary from "./pages/Secretary";
+import Reports from "./pages/Reports";
+import Legislation from "./pages/Legislation";
+import BorderMap from "./pages/BorderMap";
+import Dashboard from "./pages/Dashboard";
+import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
+import Contact from "./pages/Contact";
+import AgencyDetail from "./pages/AgencyDetail";
+import Corridors from "./pages/Corridors";
+import Interoperability from "./pages/Interoperability";
+import Organogram from "./pages/Organogram";
 
 const App: React.FC = () => {
   return (
@@ -34,6 +35,8 @@ const App: React.FC = () => {
             <Route path="/relatorios" element={<Reports />} />
             <Route path="/mapa" element={<BorderMap />} />
             <Route path="/corredores" element={<Corridors />} />
+            <Route path="/interoperabilidade" element={<Interoperability />} />
+            <Route path="/organigrama" element={<Organogram />} />
             <Route path="/legislacao" element={<Legislation />} />
             <Route path="/noticias" element={<News />} />
             <Route path="/noticias/:id" element={<NewsDetail />} />

@@ -2,24 +2,25 @@ import React, { useEffect, useState } from "react";
 import { MOCK_NEWS } from "../constants";
 import {
   ArrowRight,
-  ChevronRight,
   Shield,
   Activity,
-  MapPin,
   ExternalLink,
-  BookOpen,
   Navigation,
-  FileText,
-  Newspaper,
   Calendar,
-  Mail,
   Network,
-  Truck,
-  Anchor,
-  Zap,
   Award,
-  Building2,
   Globe,
+  Handshake,
+  Landmark,
+  Building2,
+  Waves,
+  Banknote,
+  Share2,
+  Cpu,
+  Database,
+  Workflow,
+  Zap,
+  Search,
 } from "lucide-react";
 import { getLatestBorderInsights } from "../services/geminiService";
 import { Link } from "react-router-dom";
@@ -50,10 +51,49 @@ const Home: React.FC = () => {
     fetchInsight();
   }, [language]);
 
+  const partners = [
+    {
+      name: "Banco Mundial",
+      icon: Landmark,
+      desc: t("partner_wb_desc"),
+      url: "https://www.worldbank.org",
+    },
+    {
+      name: "WCO",
+      icon: Globe,
+      desc: t("partner_wco_desc"),
+      url: "http://www.wcoomd.org",
+    },
+    {
+      name: "Embaixada do Japão",
+      icon: Building2,
+      desc: t("partner_japan_desc"),
+      url: "https://www.angola.emb-japan.go.jp",
+    },
+    {
+      name: "UNODC",
+      icon: Shield,
+      desc: t("partner_unodc_desc"),
+      url: "https://www.unodc.org",
+    },
+    {
+      name: "IMA",
+      icon: Cpu,
+      desc: t("partner_ima_desc"),
+      url: "https://ima.gov.ao/",
+    },
+    {
+      name: "GAFI",
+      icon: Banknote,
+      desc: t("partner_gafi_desc"),
+      url: "https://www.fatf-gafi.org",
+    },
+  ];
+
   return (
     <div className="animate-in fade-in duration-700">
       {/* Hero Section */}
-      <section className="relative h-[650px] bg-slate-900 overflow-hidden">
+      <section className="relative h-[670px] bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <img
             title="Business Handshake"
@@ -64,14 +104,6 @@ const Home: React.FC = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="bg-[#C5A059] text-white text-[10px] font-black px-4 py-2 rounded-sm uppercase tracking-widest shadow-lg">
-                {t("gov_angola")}
-              </div>
-              <div className="bg-white/10 backdrop-blur-md text-white text-[10px] font-black px-4 py-2 rounded-sm uppercase tracking-widest border border-white/20">
-                {t("hero_legal")}
-              </div>
-            </div>
             <h1 className="text-white text-4xl md:text-7xl font-black leading-[1.1] mb-8 tracking-tighter uppercase italic">
               {t("hero_title").split(" ")[0]} <br />
               <span className="text-[#C5A059]">
@@ -99,108 +131,107 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Quick Services Bar */}
-      <section className="bg-white border-b border-slate-100 py-12 relative z-20">
+      {/* Parceiros Externos Section */}
+      <section className="bg-white border-b border-slate-100 py-24 relative z-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-            {[
-              {
-                icon: Navigation,
-                name: t("nav_borders"),
-                path: "/mapa",
-                color: "text-[#003366]",
-              },
-              {
-                icon: Network,
-                name: t("nav_corridors"),
-                path: "/corredores",
-                color: "text-[#C5A059]",
-              },
-              {
-                icon: BookOpen,
-                name: t("nav_legis"),
-                path: "/legislacao",
-                color: "text-slate-700",
-              },
-              {
-                icon: Newspaper,
-                name: t("nav_news"),
-                path: "/noticias",
-                color: "text-slate-700",
-              },
-              {
-                icon: Mail,
-                name: t("nav_contact"),
-                path: "/contacto",
-                color: "text-slate-700",
-              },
-            ].map((item, i) => (
-              <Link
+          <div className="text-center mb-16">
+            <h2 className="inline-flex text-2xl items-center gap-2 mb-4 text-[#003366]/140 uppercase text-[9px] font-black tracking-[0.4em]">
+              <Handshake className="w-8 h-8 text-[#C5A059] " />
+              Cooperação Multilateral
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {partners.map((partner, i) => (
+              <a
                 key={i}
-                to={item.path}
-                className="group flex flex-col items-center text-center"
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col h-full bg-slate-50 border border-slate-100 p-8 rounded-sm hover:bg-white hover:shadow-2xl hover:border-[#C5A059] transition-all duration-500"
               >
-                <div className="w-16 h-16 bg-slate-50 rounded-sm flex items-center justify-center mb-4 group-hover:bg-[#003366] group-hover:text-white transition-all shadow-sm border border-slate-100">
-                  <item.icon
-                    className={`w-6 h-6 ${item.color} group-hover:text-white transition-colors`}
-                  />
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="w-14 h-14 bg-white border border-slate-100 rounded-sm flex items-center justify-center group-hover:bg-[#003366] transition-all duration-500 shadow-sm">
+                    <partner.icon className="w-7 h-7 text-[#003366] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-slate-900 font-black text-[11px] tracking-widest uppercase leading-tight group-hover:text-[#003366] transition-colors">
+                    {partner.name}
+                  </span>
                 </div>
-                <span className="text-[9px] font-black uppercase text-slate-700 tracking-widest group-hover:text-[#003366] transition-colors">
-                  {item.name}
-                </span>
-              </Link>
+                <p className="text-slate-500 text-xs font-medium leading-relaxed italic mb-8 flex-grow">
+                  {partner.desc}
+                </p>
+                <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-[#C5A059] transition-colors">
+                  Visitar Website <ExternalLink className="w-3.5 h-3.5" />
+                </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* AI Briefing Section */}
+      {/* Interoperabilidade Section */}
       <section className="py-24 bg-slate-900 border-b border-slate-800 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#C5A059]/5 skew-x-12 transform translate-x-32"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-4">
-              <div className="inline-flex items-center gap-3 text-[#C5A059] mb-8">
-                <Award className="w-8 h-8" />
-                <h2 className="text-3xl font-black uppercase tracking-tighter italic">
-                  {t("ai_brief_title")}
-                </h2>
-              </div>
-              <p className="text-slate-400 text-sm font-medium leading-relaxed mb-10">
-                {t("ai_brief_desc")}
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-5">
+              <div className="w-12 h-1 bg-[#C5A059] mb-8"></div>
+              <h2 className="text-[#003366] text-4xl font-black uppercase italic tracking-tighter leading-tight mb-8 text-white">
+                Sinergia <span className="text-[#C5A059]">Tecnológica</span>
+              </h2>
+              <p className="text-slate-600 text-lg font-medium leading-relaxed mb-10 italic text-white">
+                A interoperabilidade de sistemas é o pilar central para alinhar
+                as soluções tecnológicas aos objectivos estratégicos do CGCF,
+                garantindo a eficiência operacional e promovendo a inovação na
+                gestão fronteiriça.
               </p>
+              <div className="space-y-4 mb-12 text-white">
+                {[
+                  { icon: Cpu, text: t("interop_pillar_opt") },
+                  { icon: Workflow, text: t("interop_pillar_eff") },
+                  { icon: Zap, text: t("interop_pillar_innov") },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-4  font-black text-[10px] uppercase tracking-widest text-white"
+                  >
+                    <div className="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center">
+                      <item.icon className="w-4 h-4 text-[#C5A059]" />
+                    </div>
+                    {item.text}
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/interoperabilidade"
+                className="inline-flex items-center gap-3 text-white font-black text-[10px] uppercase tracking-[0.2em] border-b-2 border-[#C5A059] pb-1 hover:text-[#C5A059] transition-colors"
+              >
+                Explorar Arquitetura <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
-
-            <div className="lg:col-span-8">
-              <div className="bg-white p-12 rounded-sm border-l-8 border-[#C5A059] shadow-2xl relative overflow-hidden text-slate-900">
-                {loading ? (
-                  <div className="space-y-6 animate-pulse">
-                    <div className="h-4 bg-slate-100 rounded w-full"></div>
-                    <div className="h-4 bg-slate-100 rounded w-5/6"></div>
-                  </div>
-                ) : (
-                  <div className="animate-in fade-in duration-500">
-                    <div className="flex items-center gap-3 mb-8 text-[9px] font-black uppercase tracking-[0.3em] text-[#003366]">
-                      <Activity className="w-4 h-4" />
-                      {t("ai_brief_report_label")}
-                    </div>
-                    <p className="text-[#003366] text-xl font-medium italic leading-relaxed mb-12 border-l-4 border-slate-100 pl-8">
-                      {aiInsight?.text}
-                    </p>
-                    <div className="flex flex-wrap gap-4 border-t border-slate-100 pt-8">
-                      {aiInsight?.sources.map((src, i) => (
-                        <a
-                          key={i}
-                          href={src.url}
-                          target="_blank"
-                          className="flex items-center gap-2 text-[10px] font-black uppercase text-slate-400 hover:text-[#C5A059] transition-colors"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" /> {src.title}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-slate-50 p-8 rounded-sm border border-slate-100 hover:shadow-xl transition-all group">
+                  <Database className="w-10 h-10 text-[#003366] mb-6 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-[#003366] text-xs font-black uppercase tracking-widest mb-4">
+                    Repositório Único
+                  </h4>
+                  <p className="text-slate-500 text-[10px] font-medium leading-relaxed italic">
+                    Base de dados integrada para suporte à decisão estratégica
+                    imediata.
+                  </p>
+                </div>
+                <div className="bg-[#003366] p-8 rounded-sm text-white shadow-2xl relative overflow-hidden">
+                  <Share2 className="absolute -bottom-4 -right-4 w-24 h-24 opacity-10" />
+                  <Activity className="w-10 h-10 text-[#C5A059] mb-6" />
+                  <h4 className="text-white text-xs font-black uppercase tracking-widest mb-4">
+                    Fluxo Contínuo
+                  </h4>
+                  <p className="text-slate-300 text-[10px] font-medium leading-relaxed italic">
+                    Redução drástica de redundâncias burocráticas entre órgãos
+                    consubstanciados.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

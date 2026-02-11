@@ -22,9 +22,11 @@ const Reports: React.FC = () => {
     <div className="animate-in fade-in duration-700 bg-slate-50 min-h-screen">
       <section className="bg-[#003366] pt-16 pb-24 border-b-4 border-[#C5A059]">
         <div className="max-w-7xl mx-auto px-6">
-          <Link to="/sobre" className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-300 hover:text-white transition-colors mb-12">
-             <ArrowLeft className="w-4 h-4" /> {t('back_to_start')}
-          </Link>
+         <div className="flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-10">
+            <Link to="/" className="hover:text-white transition-colors">{t('nav_home')}</Link>
+            <span>/</span>
+            <span className="text-[#C5A059]">{t('nav_about_reports')}</span>
+         </div>
           <h1 className="text-white text-5xl font-black uppercase italic tracking-tighter mb-4 leading-none">
             {t('reports_title')}
           </h1>
@@ -44,7 +46,7 @@ const Reports: React.FC = () => {
                  <div className="space-y-6">
                     <div>
                        <label className="text-[8px] font-black uppercase text-slate-400 block mb-2">Categoria</label>
-                       <select className="w-full bg-slate-50 border border-slate-100 text-[10px] font-bold p-3 outline-none">
+                       <select title="Filtrar por categoria" className="w-full bg-slate-50 border border-slate-100 text-[10px] font-bold p-3 outline-none">
                           <option>Todas</option>
                        </select>
                     </div>
