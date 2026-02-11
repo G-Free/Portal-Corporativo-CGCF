@@ -55,7 +55,7 @@ const Coordinators: React.FC = () => {
                     </div>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[#003366] text-2xl lg:text-3xl font-black uppercase italic tracking-tighter mb-2">
+                    <h3 className="text-[#003366] text-2xl lg:text-2xl font-black uppercase italic tracking-tighter mb-2">
                       Dra. Vera Daves de Sousa
                     </h3>
                     <div className="inline-block bg-[#003366] text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
@@ -86,10 +86,10 @@ const Coordinators: React.FC = () => {
                     </div>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[#003366] text-2xl lg:text-3xl font-black uppercase italic tracking-tighter mb-2">
+                    <h3 className="text-[#003366] text-2xl lg:text-2xl font-black uppercase italic tracking-tighter mb-2">
                       Eng. Manuel Conceição Homem
                     </h3>
-                    <div className="inline-block bg-[#C5A059] text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
+                    <div className="inline-block bg-[#003366] text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
                       {t("coord_adjunct")}
                     </div>
                   </div>
