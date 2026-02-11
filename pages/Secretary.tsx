@@ -48,7 +48,7 @@ const Secretary: React.FC = () => {
                 Dr. Braulio Fernandes
               </h3>
               <p className="text-[#003366] text-[10px] font-black uppercase tracking-widest mt-1">
-                {t("nav_about_sec")}
+                {t("about_sec")}
               </p>
             </div>
           </div>
