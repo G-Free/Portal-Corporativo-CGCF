@@ -13,14 +13,7 @@ import {
   Handshake,
   Landmark,
   Building2,
-  Waves,
-  Banknote,
-  Share2,
-  Cpu,
-  Database,
-  Workflow,
-  Zap,
-  Search,
+  Globe,
 } from "lucide-react";
 import { getLatestBorderInsights } from "../services/geminiService";
 import { Link } from "react-router-dom";
@@ -50,45 +43,6 @@ const Home: React.FC = () => {
     };
     fetchInsight();
   }, [language]);
-
-  const partners = [
-    {
-      name: "Banco Mundial",
-      icon: Landmark,
-      desc: t("partner_wb_desc"),
-      url: "https://www.worldbank.org",
-    },
-    {
-      name: "WCO",
-      icon: Globe,
-      desc: t("partner_wco_desc"),
-      url: "http://www.wcoomd.org",
-    },
-    {
-      name: "Embaixada do Japão",
-      icon: Building2,
-      desc: t("partner_japan_desc"),
-      url: "https://www.angola.emb-japan.go.jp",
-    },
-    {
-      name: "UNODC",
-      icon: Shield,
-      desc: t("partner_unodc_desc"),
-      url: "https://www.unodc.org",
-    },
-    {
-      name: "IMA",
-      icon: Cpu,
-      desc: t("partner_ima_desc"),
-      url: "https://ima.gov.ao/",
-    },
-    {
-      name: "GAFI",
-      icon: Banknote,
-      desc: t("partner_gafi_desc"),
-      url: "https://www.fatf-gafi.org",
-    },
-  ];
 
   return (
     <div className="animate-in fade-in duration-700">
@@ -134,16 +88,40 @@ const Home: React.FC = () => {
       {/* Parceiros Externos Section */}
       <section className="bg-white border-b border-slate-100 py-24 relative z-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="inline-flex text-2xl items-center gap-2 mb-4 text-[#003366]/140 uppercase text-[9px] font-black tracking-[0.4em]">
-              <Handshake className="w-8 h-8 text-[#C5A059] " />
-              Cooperação Multilateral
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {partners.map((partner, i) => (
-              <a
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            {[
+              {
+                icon: Navigation,
+                name: t("nav_borders"),
+                path: "/mapa",
+                color: "text-[#003366]",
+              },
+              {
+                icon: Network,
+                name: t("nav_corridors"),
+                path: "/corredores",
+                color: "text-[#C5A059]",
+              },
+              {
+                icon: BookOpen,
+                name: t("nav_legis"),
+                path: "/legislacao",
+                color: "text-slate-700",
+              },
+              {
+                icon: Newspaper,
+                name: t("nav_news"),
+                path: "/noticias",
+                color: "text-slate-700",
+              },
+              {
+                icon: Mail,
+                name: t("nav_contact"),
+                path: "/contacto",
+                color: "text-slate-700",
+              },
+            ].map((item, i) => (
+              <Link
                 key={i}
                 href={partner.url}
                 target="_blank"
