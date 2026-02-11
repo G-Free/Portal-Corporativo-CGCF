@@ -6,6 +6,7 @@ export const translations = {
     nav_about_comp: 'Órgãos que Compõem',
     nav_about_coord: 'Mensagem dos Coordenadores',
     nav_about_sec: 'Mensagem do Secretario Central',
+    about_sec: 'Secretario Central',
     nav_about_reports: 'Relatórios Oficiais',
     nav_borders: 'Fronteiras',
     nav_corridors: 'Corredores Logisticos',
