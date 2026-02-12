@@ -31,7 +31,7 @@ import {
 import { getLatestBorderInsights } from '../services/geminiService';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
-import apertodemao from './conteudo/imagens/apertosdemao.jpg';
+import apertodemao from '/conteudo/imagens/apertosdemao.jpg';
 
 const Home: React.FC = () => {
   const [aiInsight, setAiInsight] = useState<{text: string, sources: any[]} | null>(null);
