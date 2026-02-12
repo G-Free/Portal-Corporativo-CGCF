@@ -225,12 +225,11 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4 text-[#003366]/40 uppercase text-[9px] font-black tracking-[0.4em]">
-              <Handshake className="w-4 h-4 text-[#C5A059]" />
-              Cooperação Multilateral & Parceiros Externos
-            </div>
-            <h2 className="text-[#003366] text-3xl font-black uppercase italic tracking-tighter">
-              Rede de Apoio Estratégico
+              <Handshake className="w-14 h-14 text-[#C5A059]" />              
+            <h2 className="text-[#003366] text-3xl font-black uppercase italic tracking-tighter">              
+              Cooperação Multilateral
             </h2>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
