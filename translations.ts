@@ -225,6 +225,10 @@ export const translations = {
     node_sec_unid_tec_locais: 'SEC. DAS UNID. TÉC. LOCAIS',
     node_sub_unid_tec: 'SUB-UNIDADES TÉCNICAS',
     node_grupo_movel_apoio: 'GRUPO MÓVEL DE APOIO',
+    corr_presidential_vision: 'Visão Estratégica do Chefe de Estado',
+    corr_lourenco_quote: 'O Corredor do Lobito deve ser um verdadeiro motor de transformação económica, impulsionando o agronegócio e fortalecendo as cadeias de valor regionais.',
+    corr_agency_lobito: 'Agência de Facilitação do Corredor do Lobito',
+    corr_trilateral_coop: 'Coordenação Trilateral: Angola, RDC e Zâmbia',
   },
   EN: {
     nav_home: 'Home',
