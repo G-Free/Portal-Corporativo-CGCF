@@ -95,7 +95,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[650px] bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
-          <img title="Angola's Border Infrastructure" src="https://depositphotos.com/br/photos/aperto-de-m%C3%A3o-interracial.html" className="w-full h-full object-cover opacity-50" />
+          <img title="Angola's Border Infrastructure" src="https://br.freepik.com/fotos-vetores-gratis/aperto-mao-negro" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#003366] via-transparent to-transparent"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
