@@ -179,24 +179,25 @@ const Home: React.FC = () => {
       </section>
 
       {/* Secção de Interoperabilidade Estratégica (Home Page) */}
-      <section className="py-24 bg-white border-b border-slate-100">
+      <section className="py-24 bg-slate-900 border-b border-slate-800 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#C5A059]/5 skew-x-12 transform translate-x-32"></div>
         <div className="max-w-7xl mx-auto px-6">
            <div className="grid lg:grid-cols-12 gap-16 items-center">
               <div className="lg:col-span-5">
                  <div className="w-12 h-1 bg-[#C5A059] mb-8"></div>
-                 <h2 className="text-[#003366] text-4xl font-black uppercase italic tracking-tighter leading-tight mb-8">
+                 <h2 className="text-4xl font-black uppercase italic tracking-tighter leading-tight mb-8 text-white">
                     Sinergia <span className="text-[#C5A059]">Tecnológica</span>
                  </h2>
-                 <p className="text-slate-600 text-lg font-medium leading-relaxed mb-10 italic">
+                 <p className="text-slate-600 text-lg font-medium leading-relaxed mb-10 italic text-white">
                    A interoperabilidade de sistemas é o pilar central para alinhar as soluções tecnológicas aos objectivos estratégicos do CGCF, garantindo a eficiência operacional e promovendo a inovação na gestão fronteiriça.
                  </p>
-                 <div className="space-y-4 mb-12">
+                 <div className="space-y-4 mb-12 text-white">
                     {[
                        { icon: Cpu, text: t('interop_pillar_opt') },
                        { icon: Workflow, text: t('interop_pillar_eff') },
                        { icon: Zap, text: t('interop_pillar_innov') }
                     ].map((item, i) => (
-                       <div key={i} className="flex items-center gap-4 text-[#003366] font-black text-[10px] uppercase tracking-widest">
+                       <div key={i} className="flex items-center gap-4 text-white font-black text-[10px] uppercase tracking-widest">
                           <div className="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center">
                              <item.icon className="w-4 h-4 text-[#C5A059]" />
                           </div>
@@ -204,7 +205,7 @@ const Home: React.FC = () => {
                        </div>
                     ))}
                  </div>
-                 <Link to="/interoperabilidade" className="inline-flex items-center gap-3 text-[#003366] font-black text-[10px] uppercase tracking-[0.2em] border-b-2 border-[#C5A059] pb-1 hover:text-[#C5A059] transition-colors">
+                 <Link to="/interoperabilidade" className="inline-flex items-center gap-3 text-white font-black text-[10px] uppercase tracking-[0.2em] border-b-2 border-[#C5A059] pb-1 hover:text-[#C5A059] transition-colors">
                     Explorar Arquitetura <ArrowRight className="w-3.5 h-3.5" />
                  </Link>
               </div>
@@ -224,52 +225,6 @@ const Home: React.FC = () => {
                  </div>
               </div>
            </div>
-        </div>
-      </section>
-
-      {/* AI Briefing Section (Renomeada para Sinergia Tecnológica) */}
-      <section className="py-24 bg-slate-900 border-b border-slate-800 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#C5A059]/5 skew-x-12 transform translate-x-32"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-             <div className="lg:col-span-4">
-                <div className="inline-flex items-center gap-3 text-[#C5A059] mb-8">
-                   <Activity className="w-8 h-8" />
-                   <h2 className="text-3xl font-black uppercase tracking-tighter italic">{t('ai_brief_title')}</h2>
-                </div>
-                <p className="text-slate-400 text-sm font-medium leading-relaxed mb-10">
-                  {t('ai_brief_desc')}
-                </p>
-             </div>
-             
-             <div className="lg:col-span-8">
-                <div className="bg-white p-12 rounded-sm border-l-8 border-[#C5A059] shadow-2xl relative overflow-hidden text-slate-900">
-                  {loading ? (
-                    <div className="space-y-6 animate-pulse">
-                      <div className="h-4 bg-slate-100 rounded w-full"></div>
-                      <div className="h-4 bg-slate-100 rounded w-5/6"></div>
-                    </div>
-                  ) : (
-                    <div className="animate-in fade-in duration-500">
-                      <div className="flex items-center gap-3 mb-8 text-[9px] font-black uppercase tracking-[0.3em] text-[#003366]">
-                        <Activity className="w-4 h-4" />
-                        {t('ai_brief_report_label')}
-                      </div>
-                      <p className="text-[#003366] text-xl font-medium italic leading-relaxed mb-12 border-l-4 border-slate-100 pl-8">
-                        {aiInsight?.text}
-                      </p>
-                      <div className="flex flex-wrap gap-4 border-t border-slate-100 pt-8">
-                        {aiInsight?.sources.map((src, i) => (
-                          <a key={i} href={src.url} target="_blank" className="flex items-center gap-2 text-[10px] font-black uppercase text-slate-400 hover:text-[#C5A059] transition-colors">
-                             <ExternalLink className="w-3.5 h-3.5" /> {src.title}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-             </div>
-          </div>
         </div>
       </section>
 
