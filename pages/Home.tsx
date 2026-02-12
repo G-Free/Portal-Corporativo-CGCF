@@ -100,14 +100,6 @@ const Home: React.FC = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="bg-[#C5A059] text-white text-[10px] font-black px-4 py-2 rounded-sm uppercase tracking-widest shadow-lg">
-                {t('gov_angola')}
-              </div>
-              <div className="bg-white/10 backdrop-blur-md text-white text-[10px] font-black px-4 py-2 rounded-sm uppercase tracking-widest border border-white/20">
-                {t('hero_legal')}
-              </div>
-            </div>
             <h1 className="text-white text-4xl md:text-7xl font-black leading-[1.1] mb-8 tracking-tighter uppercase italic">
               {t('hero_title').split(' ')[0]} <br/><span className="text-[#C5A059]">{t('hero_title').split(' ').slice(1).join(' ')}</span>
             </h1>
