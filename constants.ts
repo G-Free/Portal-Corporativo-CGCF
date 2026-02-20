@@ -327,4 +327,36 @@ export const MOCK_NEWS: NewsItem[] = [
       import.meta.url,
     ).href,
   },
+  {
+    id: "n8",
+    title:
+      "Coordenador da UTC (CGCF) realiza visita ao GGPN para fortalecimento institucional",
+    excerpt:
+      "O Coordenador da Unidade Técnica de Coordenação (UTC – CGCF) visitou o GGPN com o objetivo de promover a cooperação e o alinhamento estratégico entre as equipas.",
+    date: "20 Fevereiro 2026",
+    category: "Institucional",
+    Descric:
+      "No âmbito do reforço da coordenação institucional e melhoria dos processos de gestão de projetos, o Coordenador da UTC (CGCF) realizou uma visita ao Gabinete de Gestão de Projetos Nacionais (GGPN). Durante a visita, foram discutidos projetos em curso, desafios operacionais e oportunidades de integração entre unidades, visando eficiência e resultados estratégicos.",
+    Corp: `A visita contou com reuniões com a equipa do GGPN, apresentação de projetos em desenvolvimento e sessões de diálogo sobre metodologias de gestão integrada.
+
+      Foram abordadas soluções para melhoria da eficiência operacional, integração tecnológica e gestão de riscos nos projetos conduzidos pelas equipas.
+
+      O encontro reforçou a importância da colaboração entre UTC e GGPN, promovendo alinhamento estratégico e troca de experiências entre os profissionais envolvidos.
+
+      A visita também serviu para identificar oportunidades de inovação, otimização de processos e articulação de esforços entre diferentes unidades institucionais.
+
+      O Coordenador destacou a necessidade de consolidar práticas que fortaleçam a transparência, a eficiência e a eficácia dos projetos em execução.`,
+    Concl:
+      `A visita do Coordenador da UTC (CGCF) ao GGPN simboliza o compromisso institucional com a eficiência, a colaboração e a melhoria contínua dos processos de gestão de projetos nacionais.
+
+      Este encontro fortalece a articulação estratégica entre unidades, consolidando práticas que potencializam resultados e promovem uma visão integrada de desenvolvimento institucional.`,
+    image: new URL(
+      "/conteudo/imagens/noticias/Visita_Coordenador_UTC_GGPN.jpeg",
+      import.meta.url,
+    ).href,
+    imagesub: new URL(
+      "/conteudo/imagens/noticias/Visita_Coordenador_UTC_GGPN_1.jpeg",
+      import.meta.url,
+    ).href,
+},
 ];
