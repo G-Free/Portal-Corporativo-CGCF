@@ -32,6 +32,7 @@ import { getLatestBorderInsights } from "../services/geminiService";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../LanguageContext";
 import apertodemao from "/conteudo/imagens/homepage.jpeg";
+import imagemvideo from '../conteudo/imagens/Imagem1_logo.png';
 
 const Home: React.FC = () => {
   const [aiInsight, setAiInsight] = useState<{
@@ -382,7 +383,7 @@ const Home: React.FC = () => {
                     <div className="w-full h-full flex items-center justify-center relative">
                       <img
                         title={item.title}
-                        src="/conteudo/imagens/Imagem1_logo.png"
+                        src={imagemvideo} 
                         className="w-full h-full object-cover opacity-60"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
