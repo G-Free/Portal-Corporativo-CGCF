@@ -1,10 +1,9 @@
-
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import NewsTicker from './NewsTicker';
-import { useLanguage } from '../LanguageContext';
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import NewsTicker from "./NewsTicker";
+import { useLanguage } from "../LanguageContext";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -13,33 +12,36 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const location = useLocation();
   const { t, language } = useLanguage();
-  const isAdminPage = location.pathname === '/admin';
+  const isAdminPage = location.pathname === "/admin";
 
   // Sincronização do título do navegador (Document Title)
   useEffect(() => {
     const routeToTitle: Record<string, string> = {
-      '/': 'Home',
-      '/sobre': t('nav_about_who'),
-      '/composicao': t('nav_about_comp'),
-      '/coordenadores': t('nav_about_coord'),
-      '/secretario': t('nav_about_sec'),
-      '/relatorios': t('nav_about_reports'),
-      '/mapa': t('nav_borders'),
-      '/corredores': t('nav_corridors'),
-      '/legislacao': t('nav_legis'),
-      '/noticias': t('nav_news'),
-      '/contacto': t('nav_contact'),
-      '/admin': t('nav_admin')
+      "/": "Home",
+      "/sobre": t("nav_about_who"),
+      "/composicao": t("nav_about_comp"),
+      "/coordenadores": t("nav_about_coord"),
+      "/secretario": t("nav_about_sec"),      
+      "/Organogram": t("nav_about_organogram"),
+      "/relatorios": t("nav_about_reports"),
+      "/mapa": t("nav_borders"),
+      "/interoperabilidade": t("nav_interop"),
+      "/corredores": t("nav_corridors"),
+      "/legislacao": t("nav_legis"),
+      "/noticias": t("nav_news"),
+      "/contacto": t("nav_contact"),
+      "/admin": t("nav_admin"),
     };
 
-    let pageTitle = routeToTitle[location.pathname] || 'CGCF';
-    
+    let pageTitle = routeToTitle[location.pathname] || "CGCF";
+
     // Tratamento para rotas dinâmicas
-    if (location.pathname.startsWith('/noticias/')) pageTitle = t('news_room');
-    if (location.pathname.startsWith('/agencia/')) pageTitle = t('nav_about_comp');
+    if (location.pathname.startsWith("/noticias/")) pageTitle = t("news_room");
+    if (location.pathname.startsWith("/agencia/"))
+      pageTitle = t("nav_about_comp");
 
     document.title = `CGCF | ${pageTitle}`;
-    
+
     // Scroll to top ao mudar de rota
     window.scrollTo(0, 0);
   }, [location.pathname, t, language]);
@@ -54,13 +56,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <Navbar />
       {/* Spacer para compensar o Navbar fixo */}
       <div className="h-[75px] md:h-[120px]"></div>
-      
+
       {/* Banner rotativo de notícias e informações */}
       <NewsTicker />
 
-      <main className="flex-grow">
-        {children}
-      </main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );

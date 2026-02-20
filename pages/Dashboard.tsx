@@ -5,17 +5,18 @@ import {
   RefreshCw, Plus, Eye, X, ShieldCheck, Lock, Key, 
   Terminal, Camera, FileSearch, HardDrive, Download, Search,
   CheckCircle, AlertTriangle, Info, Server, ExternalLink, Image as ImageIcon,
-  Loader2, Scan, ChevronRight, Folder, Hash, LockKeyhole
+  Loader2, Scan, ChevronRight, Folder, Hash, LockKeyhole, LayoutPanelLeft
 } from 'lucide-react';
 import { ASSETS_FOLDER } from '../assets/images';
 import { AuditLog, DigitalAsset } from '../types';
 import { useLanguage } from '../LanguageContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 type AdminTab = 'overview' | 'assets' | 'logs';
 
 const Dashboard: React.FC = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const fileInputRef = useRef<HTMLInputElement>(null);
   
   // Segurança e MFA
@@ -33,7 +34,6 @@ const Dashboard: React.FC = () => {
   
   // Auditoria e Logs
   const [logs, setLogs] = useState<AuditLog[]>([]);
-  const [isSyncing, setIsSyncing] = useState(false);
 
   const addAuditLog = (action: AuditLog['action'], details: string, severity: AuditLog['severity'] = 'INFO') => {
     const newLog: AuditLog = {
@@ -183,6 +183,12 @@ const Dashboard: React.FC = () => {
               {tab.label}
             </button>
           ))}
+          
+          <div className="pt-10 mt-10 border-t border-white/5">
+             <Link to="/sirof" className="w-full flex items-center gap-4 px-6 py-4 rounded-sm text-[9px] font-black transition-all uppercase tracking-widest text-slate-500 hover:bg-white/5 hover:text-[#C5A059]">
+                <LayoutPanelLeft className="w-4 h-4" /> Operacional SIROF
+             </Link>
+          </div>
         </nav>
       </aside>
 
@@ -203,10 +209,38 @@ const Dashboard: React.FC = () => {
            </h1>
         </div>
 
-        {/* VIEW: ASSETS (A PASTA DE IMAGENS) */}
+        {/* VIEW: OVERVIEW */}
+        {activeTab === 'overview' && (
+           <div className="space-y-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-in fade-in duration-700">
+                {[
+                  { label: 'Integridade da Pasta', value: '100%', icon: HardDrive, color: 'text-blue-500' },
+                  { label: 'Ficheiros JPG', value: assets.filter(a => a.fileType === 'JPG').length.toString(), icon: ImageIcon, color: 'text-[#C5A059]' },
+                  { label: 'Acessos Auditados', value: logs.length.toString(), icon: LockKeyhole, color: 'text-emerald-500' },
+                ].map((stat, i) => (
+                  <div key={i} className="bg-slate-900 border border-white/5 p-10 rounded flex flex-col items-center text-center group hover:border-[#C5A059]/20 transition-all">
+                     <stat.icon className={`w-10 h-10 ${stat.color} mb-6 transform group-hover:scale-110 transition-transform`} />
+                     <p className="text-white text-4xl font-black italic mb-2 tracking-tighter">{stat.value}</p>
+                     <p className="text-slate-600 text-[10px] font-black uppercase tracking-widest">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="bg-[#C5A059]/10 border border-[#C5A059]/20 p-10 rounded flex flex-col md:flex-row items-center justify-between gap-8">
+                 <div>
+                    <h3 className="text-[#C5A059] text-xl font-black uppercase italic mb-2 tracking-tight">Painel Operacional SIROF</h3>
+                    <p className="text-slate-400 text-xs font-medium italic">Aceda à monitorização em tempo real de ocorrências e fluxos fronteiriços.</p>
+                 </div>
+                 <Link to="/sirof" className="bg-[#C5A059] text-white px-8 py-4 rounded-sm text-[10px] font-black uppercase tracking-widest shadow-xl flex items-center gap-3 hover:scale-105 transition-transform">
+                    Abrir Painel <ChevronRight className="w-4 h-4" />
+                 </Link>
+              </div>
+           </div>
+        )}
+
+        {/* VIEW: ASSETS */}
         {activeTab === 'assets' && (
            <div className="space-y-10 animate-in fade-in duration-500">
-              
               <div className="bg-slate-900 border border-white/5 p-6 rounded-sm flex items-center justify-between">
                  <div className="flex items-center gap-6">
                     <div className="p-3 bg-white/5 rounded">
@@ -291,29 +325,9 @@ const Dashboard: React.FC = () => {
                              <td className="p-6 text-[8px] font-mono text-slate-600">8f2c...9a0e</td>
                           </tr>
                        ))}
-                       {logs.length === 0 && (
-                          <tr><td colSpan={4} className="p-20 text-center text-slate-600 font-black uppercase text-[10px] tracking-widest italic">Sem actividade no repositório local.</td></tr>
-                       )}
                     </tbody>
                  </table>
               </div>
-           </div>
-        )}
-
-        {/* VIEW: OVERVIEW */}
-        {activeTab === 'overview' && (
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-in fade-in duration-700">
-              {[
-                { label: 'Integridade da Pasta', value: '100%', icon: HardDrive, color: 'text-blue-500' },
-                { label: 'Ficheiros JPG', value: assets.filter(a => a.fileType === 'JPG').length.toString(), icon: ImageIcon, color: 'text-[#C5A059]' },
-                { label: 'Acessos Auditados', value: logs.length.toString(), icon: LockKeyhole, color: 'text-emerald-500' },
-              ].map((stat, i) => (
-                <div key={i} className="bg-slate-900 border border-white/5 p-10 rounded flex flex-col items-center text-center group hover:border-[#C5A059]/20 transition-all">
-                   <stat.icon className={`w-10 h-10 ${stat.color} mb-6 transform group-hover:scale-110 transition-transform`} />
-                   <p className="text-white text-4xl font-black italic mb-2 tracking-tighter">{stat.value}</p>
-                   <p className="text-slate-600 text-[10px] font-black uppercase tracking-widest">{stat.label}</p>
-                </div>
-              ))}
            </div>
         )}
 
@@ -338,10 +352,6 @@ const Dashboard: React.FC = () => {
                           <p className="text-white font-mono text-[9px] flex items-center gap-2 truncate">
                             <Hash className="w-3 h-3 text-[#C5A059]" /> f82a7b1...c09e
                           </p>
-                       </div>
-                       <div className="p-4 bg-white/5 rounded-sm border border-white/5">
-                          <p className="text-slate-500 text-[8px] font-black uppercase tracking-widest mb-1">Tipo MIME</p>
-                          <p className="text-white font-bold text-xs">image/jpeg</p>
                        </div>
                     </div>
                     <div className="mt-10 space-y-4">

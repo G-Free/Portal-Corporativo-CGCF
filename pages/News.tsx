@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { MOCK_NEWS } from '../constants';
-import { Search, Calendar, ArrowRight, Clock, Filter } from 'lucide-react';
+import { Search, Calendar, ArrowRight, Clock, Filter, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 
@@ -76,8 +76,17 @@ const News: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredNews.map((item) => (
             <Link key={item.id} to={`/noticias/${item.id}`} className="group flex flex-col h-full bg-white border border-slate-200 rounded-sm hover:border-[#C5A059] hover:shadow-2xl transition-all">
-              <div className="relative overflow-hidden h-56">
-                <img title={item.title} src={item.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="relative overflow-hidden h-56 bg-slate-100">
+                {item.isVideo || item.image.endsWith('.mp4') ? (
+                   <div className="w-full h-full flex items-center justify-center relative">
+                      <img title={item.title} src="/conteudo/imagens/Imagem1_logo.png" className="w-full h-full object-cover opacity-60" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                         <Play className="w-12 h-12 text-[#003366] opacity-80 group-hover:scale-125 transition-transform" />
+                      </div>
+                   </div>
+                ) : (
+                  <img title={item.title} src={item.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                )}
                 <div className="absolute top-4 left-4 bg-[#C5A059] text-white text-[8px] font-black uppercase px-3 py-1 rounded-sm shadow-lg">
                   {item.category}
                 </div>

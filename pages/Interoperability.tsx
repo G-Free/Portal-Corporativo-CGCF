@@ -1,31 +1,44 @@
 
 import React from 'react';
 import { 
+  BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, 
+  Cell, CartesianGrid
+} from 'recharts';
+import { 
   Cpu, 
   Workflow, 
   Zap, 
   ShieldCheck, 
-  BarChart3, 
   Network, 
   Database, 
-  Layers, 
   Activity, 
-  ArrowRight,
   Target,
-  Share2,
   Lightbulb,
-  FileText,
-  Lock,
-  Search,
   Handshake,
-  // Added missing Monitor icon
-  Monitor
+  FileSearch,
+  ArrowLeftRight,
+  ShieldAlert,
+  Biohazard,
+  CheckCircle2 as LucideCheck,
+  TrendingUp,
+  BarChart3,
+  TrendingDown,
+  Monitor,
+  Lock,
+  Scale
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 
 const Interoperability: React.FC = () => {
   const { t } = useLanguage();
+
+  // Dados Mockados de Eficiência Logística (Público/Investidor)
+  const efficiencyData = [
+    { name: '2023 (Pré-InterOp)', value: 45, unit: 'm' },
+    { name: '2024 (Fase 1)', value: 28, unit: 'm' },
+    { name: '2026 (Target)', value: 8, unit: 'm' },
+  ];
 
   const pillars = [
     { 
@@ -58,6 +71,15 @@ const Interoperability: React.FC = () => {
     }
   ];
 
+  const operationalModules = [
+    { icon: FileSearch, title: t('interop_mod_occ'), desc: t('interop_mod_occ_desc') },
+    { icon: Activity, title: t('interop_mod_flow'), desc: t('interop_mod_flow_desc') },
+    { icon: Target, title: t('interop_mod_risk'), desc: t('interop_mod_risk_desc') },
+    { icon: Workflow, title: t('interop_mod_workflow'), desc: t('interop_mod_workflow_desc') },
+    { icon: Database, title: t('interop_mod_assets'), desc: t('interop_mod_assets_desc') },
+    { icon: Biohazard, title: t('interop_mod_health'), desc: t('interop_mod_health_desc') },
+  ];
+
   return (
     <div className="animate-in fade-in duration-700 bg-white min-h-screen">
       {/* Hero Section */}
@@ -83,57 +105,124 @@ const Interoperability: React.FC = () => {
         </div>
       </section>
 
-      {/* Secção Destaque: Protocolo de Partilha de Dados (Card Branco de Luxo) */}
-      <section className="py-24 bg-slate-50 px-6 relative z-20">
-         <div className="max-w-7xl mx-auto">
-            <div className="bg-white border border-slate-200 shadow-2xl rounded-sm p-10 md:p-20 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/5 rounded-bl-full pointer-events-none"></div>
-               
-               <div className="grid lg:grid-cols-12 gap-16 items-start relative z-10">
-                  <div className="lg:col-span-8 space-y-8">
-                     <div className="inline-flex items-center gap-3 text-[#003366]">
-                        <Handshake className="w-8 h-8 text-[#C5A059]" />
-                        <span className="text-[11px] font-black uppercase tracking-[0.4em]">{t('interop_protocol_title')}</span>
+      {/* RELATÓRIO DE TRANSPARÊNCIA E EFICIÊNCIA OPERACIONAL (RTD Público) */}
+      <section id="transparency-report" className="py-24 bg-slate-50 border-b border-slate-200">
+         <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
+               <div className="max-w-2xl">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C5A059]/10 text-[#C5A059] rounded-full mb-6 border border-[#C5A059]/20">
+                     <LucideCheck className="w-3.5 h-3.5" />
+                     <span className="text-[9px] font-black uppercase tracking-widest">{t('interop_investor_tag')}</span>
+                  </div>
+                  <h3 className="text-[#003366] text-4xl font-black uppercase italic tracking-tighter leading-none mb-4">{t('interop_summary_title')}</h3>
+                  <p className="text-slate-500 text-lg font-medium italic leading-relaxed">{t('interop_summary_desc')}</p>
+               </div>
+               <div className="bg-emerald-50 border border-emerald-100 p-4 rounded-sm flex items-center gap-4">
+                  <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                     <ShieldCheck className="w-6 h-6" />
+                  </div>
+                  <div>
+                     <p className="text-[9px] font-black uppercase text-emerald-600 tracking-widest leading-none mb-1">{t('interop_status_global')}</p>
+                     <p className="text-emerald-800 text-xs font-bold uppercase">{t('interop_operational_audited')}</p>
+                  </div>
+               </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+               {/* Gráfico de Tempo Médio de Despacho (Performance Histórica) */}
+               <div className="lg:col-span-7 bg-white p-10 rounded-sm shadow-2xl border border-slate-100 flex flex-col">
+                  <div className="flex justify-between items-center mb-10">
+                     <div>
+                        <h4 className="text-[#003366] text-sm font-black uppercase tracking-widest mb-1">{t('interop_stat_celerity')}</h4>
+                        <p className="text-slate-400 text-[10px] font-medium italic">{t('interop_stat_time_label')}</p>
                      </div>
-                     <h2 className="text-[#003366] text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-tight">
-                        Compromisso de <span className="text-[#C5A059]">Integração Soberana</span>
-                     </h2>
-                     <div className="bg-slate-50 p-8 border-l-4 border-[#003366] mb-10">
-                        <p className="text-[#003366] text-xl font-medium leading-relaxed italic">
-                           "{t('interop_protocol_desc')}"
-                        </p>
-                     </div>
-                     <p className="text-slate-500 text-lg font-medium leading-relaxed">
-                        {t('interop_protocol_impact')}
-                     </p>
-                     <div className="pt-8 border-t border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {['AGT', 'SME', 'ANTT', 'DTSER'].map(org => (
-                           <div key={org} className="bg-slate-50 border border-slate-200 p-4 text-center rounded-sm">
-                              <span className="text-[10px] font-black text-[#003366] uppercase tracking-widest">{org}</span>
-                           </div>
-                        ))}
+                     <div className="flex items-center gap-2 text-emerald-600">
+                        <TrendingDown className="w-5 h-5" />
+                        <span className="text-lg font-black italic">-82%</span>
                      </div>
                   </div>
-                  <div className="lg:col-span-4 bg-[#003366] p-10 rounded-sm text-white shadow-xl">
-                     <h3 className="text-[#C5A059] text-[10px] font-black uppercase tracking-widest mb-6">Objectivos Técnicos</h3>
-                     <ul className="space-y-6">
-                        {[
-                           'Eficácia nas acções de controlo',
-                           'Inteligência conjunta',
-                           'Gestão de risco automatizada',
-                           'Combate a ilícitos transfronteiriços'
-                        ].map((obj, i) => (
-                           <li key={i} className="flex gap-4 items-start">
-                              <CheckCircle2 className="w-5 h-5 text-[#C5A059] shrink-0" />
-                              <span className="text-xs font-bold uppercase tracking-tight leading-tight">{obj}</span>
-                           </li>
-                        ))}
-                     </ul>
+                  
+                  <div className="h-[250px] w-full">
+                     <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={efficiencyData}>
+                           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                           <XAxis dataKey="name" tick={{ fontSize: 10, fontWeight: 'bold' }} axisLine={false} tickLine={false} />
+                           <YAxis hide />
+                           <Tooltip 
+                              cursor={{ fill: 'rgba(0,51,102,0.02)' }}
+                              contentStyle={{ borderRadius: '0', border: '1px solid #e2e8f0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
+                           />
+                           <Bar dataKey="value" radius={[4, 4, 0, 0]} barSize={60}>
+                              {efficiencyData.map((entry, index) => (
+                                 <Cell key={`cell-${index}`} fill={index === 2 ? '#C5A059' : '#003366'} />
+                              ))}
+                           </Bar>
+                        </BarChart>
+                     </ResponsiveContainer>
                   </div>
+                  
+                  <div className="mt-8 p-6 bg-slate-50 rounded-sm flex items-center justify-between border border-slate-100">
+                     <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{t('interop_benchmark_future')}</p>
+                     <p className="text-[#003366] text-xs font-black uppercase italic">{t('interop_demat_target')}</p>
+                  </div>
+               </div>
+
+               {/* Indicadores Rápidos para Investidores (Predictability) */}
+               <div className="lg:col-span-5 grid grid-cols-1 gap-6">
+                  <div className="bg-[#003366] p-8 text-white rounded-sm shadow-xl flex flex-col justify-center relative overflow-hidden group">
+                     <Activity className="absolute -right-4 -bottom-4 w-32 h-32 opacity-10 group-hover:scale-110 transition-transform" />
+                     <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#C5A059] mb-4">{t('interop_stat_trade_index')}</p>
+                     <div className="flex items-end gap-3 mb-6">
+                        <span className="text-5xl font-black italic tracking-tighter">8.5</span>
+                        <span className="text-slate-400 text-[11px] font-bold uppercase mb-2">/ 10.0</span>
+                     </div>
+                     <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                        <div className="bg-[#C5A059] h-full w-[85%]"></div>
+                     </div>
+                     <p className="text-[9px] font-bold text-slate-400 mt-4 uppercase tracking-widest">{t('interop_predictability')}</p>
+                  </div>
+
+                  <div className="bg-white p-8 border border-slate-200 rounded-sm shadow-sm flex items-center justify-between">
+                     <div className="flex items-center gap-6">
+                        <div className="w-14 h-14 bg-slate-50 border border-slate-100 rounded-sm flex items-center justify-center text-[#003366]">
+                           <BarChart3 className="w-8 h-8" />
+                        </div>
+                        <div>
+                           <p className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">{t('interop_stat_ops_label')}</p>
+                           <p className="text-[#003366] text-2xl font-black italic tracking-tighter">148.920+</p>
+                        </div>
+                     </div>
+                     <div className="text-right">
+                        <span className="text-[9px] font-black bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full border border-emerald-100">{t('interop_audited')}</span>
+                     </div>
+                  </div>
+
+                  <div className="bg-white p-8 border border-slate-200 rounded-sm shadow-sm flex items-center gap-6">
+                     <div className="w-14 h-14 bg-slate-50 border border-slate-100 rounded-sm flex items-center justify-center text-[#C5A059]">
+                        <Scale className="w-8 h-8" />
+                     </div>
+                     <div>
+                        <p className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">{t('interop_stat_compliance')}</p>
+                        <p className="text-[#003366] text-lg font-black uppercase italic leading-none">{t('interop_stat_stable')}</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+            <div className="mt-16 text-center">
+               <div className="max-w-3xl mx-auto p-10 border border-dashed border-slate-300 rounded-sm">
+                  <ShieldAlert className="w-10 h-10 text-slate-300 mx-auto mb-6" />
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed mb-10 italic">
+                     "Este dashboard reflecte dados de transparência para consulta pública."
+                  </p>
+                  <Link to="/sirof" className="inline-flex items-center gap-4 bg-[#003366] text-white px-10 py-5 font-black uppercase text-[10px] tracking-widest shadow-2xl hover:bg-[#C5A059] transition-all group">
+                     Consola Institucional SIROF <Activity className="w-4 h-4 group-hover:animate-pulse" />
+                  </Link>
                </div>
             </div>
          </div>
       </section>
+
 
       {/* Ecossistema Digital: SIROF e SGO */}
       <section className="py-24 bg-white px-6">
@@ -189,13 +278,94 @@ const Interoperability: React.FC = () => {
          </div>
       </section>
 
-      {/* Pillars Section */}
-      <section className="py-24 bg-slate-50 px-6">
+      {/* Módulos Operacionais */}
+      <section className="py-24 bg-white px-6">
+         <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+               <div className="w-12 h-1 bg-[#C5A059] mx-auto mb-6"></div>
+               <h2 className="text-[#003366] text-4xl font-black uppercase italic tracking-tighter leading-none">
+                  {t('interop_module_title')}
+               </h2>
+               <p className="text-slate-500 text-lg font-medium max-w-3xl mx-auto mt-6 italic leading-relaxed">
+                  {t('interop_module_desc')}
+               </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+               {operationalModules.map((mod, i) => (
+                  <div key={i} className="bg-slate-50 border border-slate-100 p-10 rounded-sm hover:border-[#003366] hover:shadow-2xl transition-all group flex flex-col h-full">
+                     <div className="w-14 h-14 bg-white border border-slate-100 rounded-sm flex items-center justify-center text-[#003366] mb-8 group-hover:bg-[#003366] group-hover:text-white transition-all shadow-sm">
+                        <mod.icon className="w-7 h-7" />
+                     </div>
+                     <h4 className="text-[#003366] text-sm font-black uppercase tracking-widest mb-4 leading-tight group-hover:text-[#C5A059] transition-colors">{mod.title}</h4>
+                     <p className="text-slate-500 text-xs font-medium leading-relaxed italic flex-grow">
+                        {mod.desc}
+                     </p>
+                  </div>
+               ))}
+            </div>
+         </div>
+      </section>
+
+      {/* Protocolo de Partilha de Dados */}
+      <section className="py-24 bg-slate-50 px-6 relative z-20">
+         <div className="max-w-7xl mx-auto">
+            <div className="bg-white border border-slate-200 shadow-2xl rounded-sm p-10 md:p-20 relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059]/5 rounded-bl-full pointer-events-none"></div>
+               
+               <div className="grid lg:grid-cols-12 gap-16 items-start relative z-10">
+                  <div className="lg:col-span-8 space-y-8">
+                     <div className="inline-flex items-center gap-3 text-[#003366]">
+                        <Handshake className="w-8 h-8 text-[#C5A059]" />
+                        <span className="text-[11px] font-black uppercase tracking-[0.4em]">{t('interop_protocol_title')}</span>
+                     </div>
+                     <h2 className="text-[#003366] text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-tight">
+                        Sinergia <span className="text-[#C5A059]">Interinstitucional</span>
+                     </h2>
+                     <div className="bg-slate-50 p-8 border-l-4 border-[#003366] mb-10">
+                        <p className="text-[#003366] text-xl font-medium leading-relaxed italic">
+                           "{t('interop_protocol_desc')}"
+                        </p>
+                     </div>
+                     <p className="text-slate-500 text-lg font-medium leading-relaxed">
+                        {t('interop_protocol_impact')}
+                     </p>
+                     <div className="pt-8 border-t border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {['AGT', 'SME', 'ANTT', 'DTSER'].map(org => (
+                           <div key={org} className="bg-slate-50 border border-slate-200 p-4 text-center rounded-sm">
+                              <span className="text-[10px] font-black text-[#003366] uppercase tracking-widest">{org}</span>
+                           </div>
+                        ))}
+                     </div>
+                  </div>
+                  <div className="lg:col-span-4 bg-[#003366] p-10 rounded-sm text-white shadow-xl">
+                     <h3 className="text-[#C5A059] text-[10px] font-black uppercase tracking-widest mb-6">{t('interop_objectives_title')}</h3>
+                     <ul className="space-y-6">
+                        {[
+                           'Eficácia nas acções de controlo',
+                           'Inteligência conjunta',
+                           'Gestão de risco automatizada',
+                           'Combate a ilícitos transfronteiriços'
+                        ].map((obj, i) => (
+                           <li key={i} className="flex gap-4 items-start">
+                              <LucideCheck className="w-5 h-5 text-[#C5A059] shrink-0" />
+                              <span className="text-xs font-bold uppercase tracking-tight leading-tight">{obj}</span>
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      {/* Pilares da Estratégia Digital */}
+      <section className="py-24 bg-white px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-             <span className="text-[10px] font-black uppercase text-[#C5A059] tracking-[0.4em] mb-4 block">Eixos de Modernização</span>
+             <span className="text-[10px] font-black uppercase text-[#C5A059] tracking-[0.4em] mb-4 block">Arquitetura SIROF</span>
              <h2 className="text-[#003366] text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-none">
-               Pilares da Estratégia Digital
+               Pilares do Ecossistema Digital
              </h2>
           </div>
 
@@ -214,81 +384,8 @@ const Interoperability: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Architecture Framework Section */}
-      <section className="py-24 bg-[#020617] text-white overflow-hidden relative">
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-           <Layers className="w-[800px] h-[800px] absolute -left-40 -bottom-40 text-[#C5A059]" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7">
-               <div className="w-12 h-1.5 bg-[#C5A059] mb-10"></div>
-               <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter leading-none mb-8">
-                 {t('interop_framework_title')}
-               </h2>
-               <p className="text-slate-400 text-xl font-medium leading-relaxed italic mb-12">
-                 {t('interop_framework_desc')}
-               </p>
-               
-               <div className="grid grid-cols-2 gap-8">
-                  <div className="flex items-start gap-4">
-                     <div className="w-10 h-10 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#C5A059]">
-                        <Database className="w-5 h-5" />
-                     </div>
-                     <div>
-                        <h5 className="text-[10px] font-black uppercase tracking-widest text-white mb-1">Repositório Único</h5>
-                        <p className="text-slate-500 text-[10px] font-medium italic">Base de dados centralizada e segura.</p>
-                     </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                     <div className="w-10 h-10 bg-white/5 border border-white/10 rounded flex items-center justify-center text-[#C5A059]">
-                        <Share2 className="w-5 h-5" />
-                     </div>
-                     <div>
-                        <h5 className="text-[10px] font-black uppercase tracking-widest text-white mb-1">Intercâmbio Seguro</h5>
-                        <p className="text-slate-500 text-[10px] font-medium italic">Encriptação de ponta a ponta.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            
-            <div className="lg:col-span-5">
-               <div className="bg-[#003366] p-12 rounded-sm border-2 border-white/5 shadow-2xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-white opacity-[0.02] -skew-x-12"></div>
-                  <h3 className="text-[#C5A059] text-xs font-black uppercase tracking-[0.3em] mb-8">Conformidade Legal</h3>
-                  <p className="text-slate-300 text-sm font-medium leading-relaxed mb-10 italic">
-                    "A interoperabilidade tecnológica é uma obrigação institucional definida no Artigo 12.º do Regulamento do CGCF, garantindo a transparência e auditabilidade de todos os processos."
-                  </p>
-                  <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-widest text-slate-400">
-                     <ShieldCheck className="w-4 h-4 text-emerald-500" /> Protocolo Assinado 22/26
-                  </div>
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
-
-// Helper component for lists
-const CheckCircle2 = ({ className }: { className: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="3" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-    <polyline points="22 4 12 14.01 9 11.01" />
-  </svg>
-);
 
 export default Interoperability;
