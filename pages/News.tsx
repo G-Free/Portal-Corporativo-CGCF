@@ -4,6 +4,7 @@ import { MOCK_NEWS } from '../constants';
 import { Search, Calendar, ArrowRight, Clock, Filter, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
+import {imagemvideo} from '/conteudo/imagens/Imagem1_logo.png';
 
 const News: React.FC = () => {
   const { t } = useLanguage();
@@ -79,7 +80,7 @@ const News: React.FC = () => {
               <div className="relative overflow-hidden h-56 bg-slate-100">
                 {item.isVideo || item.image.endsWith('.mp4') ? (
                    <div className="w-full h-full flex items-center justify-center relative">
-                      <img title={item.title} src="/conteudo/imagens/Imagem1_logo.png" className="w-full h-full object-cover opacity-60" />
+                      <img title={item.title} src={imagemvideo} className="w-full h-full object-cover opacity-60" />
                       <div className="absolute inset-0 flex items-center justify-center">
                          <Play className="w-12 h-12 text-[#003366] opacity-80 group-hover:scale-125 transition-transform" />
                       </div>
