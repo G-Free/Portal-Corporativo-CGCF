@@ -4,7 +4,7 @@ import { MOCK_NEWS } from '../constants';
 import { Search, Calendar, ArrowRight, Clock, Filter, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
-import {imagemvideo} from '/conteudo/imagens/Imagem1_logo.png';
+import imagemvideo from '/conteudo/imagens/Imagem1_logo.png';
 
 const News: React.FC = () => {
   const { t } = useLanguage();
