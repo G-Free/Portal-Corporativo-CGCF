@@ -326,20 +326,50 @@ export const MOCK_NEWS: NewsItem[] = [
       import.meta.url,
     ).href,
     images: [
-      `${process.env.PUBLIC_URL}/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg`,
-      "/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg",
-      "/conteudo/imagens/noticias/luvo_momento_do_evento_1.jpeg",
-      "/conteudo/imagens/noticias/luvo_placa.jpeg",
-      "/conteudo/imagens/noticias/luvo_discruco_da_ministra_do_minif.jpeg",
-      "/conteudo/imagens/noticias/luvo_discruco_dp_governador_do_zaire.jpeg",
-      "/conteudo/imagens/noticias/luvo_momento_corte_fita.jpeg",
-      "/conteudo/imagens/noticias/luvo_momento_do_hino.jpeg",
-      "/conteudo/imagens/noticias/luvo_momento.jpeg",
-      "/conteudo/imagens/noticias/luvo_evento.jpeg",
-      "/conteudo/imagens/noticias/luvo_comprimento_da_chegada.jpeg",
-      "/conteudo/imagens/noticias/luvo_chegada.jpeg",
-      "/conteudo/imagens/noticias/luvo_momento_do_evento.jpeg",
-      "/conteudo/imagens/noticias/luvo_momento_do_evento_entrevista.jpeg",
+      new URL(
+        "/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_do_evento_1.jpeg",
+        import.meta.url,
+      ).href,
+      new URL("/conteudo/imagens/noticias/luvo_placa.jpeg", import.meta.url)
+        .href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_discruco_da_ministra_do_minif.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_discruco_dp_governador_do_zaire.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_corte_fita.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_do_hino.jpeg",
+        import.meta.url,
+      ).href,
+      new URL("/conteudo/imagens/noticias/luvo_momento.jpeg", import.meta.url)
+        .href,
+      new URL("/conteudo/imagens/noticias/luvo_evento.jpeg", import.meta.url)
+        .href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_comprimento_da_chegada.jpeg",
+        import.meta.url,
+      ).href,
+      new URL("/conteudo/imagens/noticias/luvo_chegada.jpeg", import.meta.url)
+        .href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_do_evento.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_do_evento_entrevista.jpeg",
+        import.meta.url,
+      ).href,
     ],
   },
   {
