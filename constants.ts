@@ -326,6 +326,7 @@ export const MOCK_NEWS: NewsItem[] = [
       import.meta.url,
     ).href,
     images: [
+      `${process.env.PUBLIC_URL}/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg`,
       "/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg",
       "/conteudo/imagens/noticias/luvo_momento_do_evento_1.jpeg",
       "/conteudo/imagens/noticias/luvo_placa.jpeg",
