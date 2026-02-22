@@ -317,7 +317,7 @@ export const MOCK_NEWS: NewsItem[] = [
     Concl: `A inauguração do Posto Fronteiriço do Luvo simboliza um avanço estrutural na gestão das fronteiras nacionais. Mais do que uma obra física, representa um investimento estratégico em eficiência institucional, segurança, competitividade económica e cooperação regional.
       A consolidação deste modelo abre caminho para futuras iniciativas de modernização em outros pontos fronteiriços do país, reforçando uma visão orientada para resultados, sustentabilidade e desenvolvimento integrado.`,
     image: new URL(
-      "/conteudo/imagens/noticias/Inaguração_do_posto_do_luvo_Video.mp4",
+      "/conteudo/imagens/noticias/Inaguração_do_posto_do_luvo_Video .mp4",
       import.meta.url,
     ).href,
     isVideo: true,
