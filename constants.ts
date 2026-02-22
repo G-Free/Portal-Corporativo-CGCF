@@ -299,7 +299,7 @@ export const MOCK_NEWS: NewsItem[] = [
       "Posto Fronteiriço do Luvo Inaugurado como Primeiro Modelo de Paragem Única em Angola",
     excerpt:
       "No âmbito da modernização administrativa e da integração económica regional, foi inaugurado no dia 19 de Fevereiro de 2026 o Posto Fronteiriço do Luvo, tornando-se o primeiro posto de paragem única do país.",
-    date: "19 Fevereiro 2026",
+    date: "20 Fevereiro 2026",
     category: "Institucional",
     Descric:
       "No quadro da estratégia nacional de modernização das infra-estruturas públicas e reforço da gestão integrada de fronteiras, foi inaugurado, no dia 19 de Fevereiro de 2026, o Posto Fronteiriço do Luvo, na província do Zaire. A infra-estrutura passa a operar sob o modelo de paragem única, permitindo a centralização e harmonização dos procedimentos migratórios, aduaneiros e de fiscalização num único espaço operacional, com foco na eficiência, segurança e facilitação do comércio transfronteiriço.",
@@ -314,11 +314,10 @@ export const MOCK_NEWS: NewsItem[] = [
       Para além do impacto directo na mobilidade de pessoas e bens, a infra-estrutura assume carácter estratégico na integração económica regional.
 
       O projecto reflecte o compromisso contínuo com a modernização administrativa.`,
-    Concl:
-      `A inauguração do Posto Fronteiriço do Luvo simboliza um avanço estrutural na gestão das fronteiras nacionais. Mais do que uma obra física, representa um investimento estratégico em eficiência institucional, segurança, competitividade económica e cooperação regional.
-      A consolidação deste modelo abre caminho para futuras iniciativas de modernização em outros pontos fronteiriços do país, reforçando uma visão orientada para resultados, sustentabilidade e desenvolvimento integrado.`,    
-      image: new URL(
-      "/conteudo/imagens/noticias/Inaguração do posto do luvo.mp4",
+    Concl: `A inauguração do Posto Fronteiriço do Luvo simboliza um avanço estrutural na gestão das fronteiras nacionais. Mais do que uma obra física, representa um investimento estratégico em eficiência institucional, segurança, competitividade económica e cooperação regional.
+      A consolidação deste modelo abre caminho para futuras iniciativas de modernização em outros pontos fronteiriços do país, reforçando uma visão orientada para resultados, sustentabilidade e desenvolvimento integrado.`,
+    image: new URL(
+      "/conteudo/imagens/noticias/Inaguração_do_posto_do_luvo_Video.mp4",
       import.meta.url,
     ).href,
     isVideo: true,
@@ -326,6 +325,21 @@ export const MOCK_NEWS: NewsItem[] = [
       "/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg",
       import.meta.url,
     ).href,
+    images: [
+      "/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg",
+      "/conteudo/imagens/noticias/luvo_momento_do_evento_1.jpeg",
+      "/conteudo/imagens/noticias/luvo_placa.jpeg",
+      "/conteudo/imagens/noticias/luvo_discruco_da_ministra_do_minif.jpeg",
+      "/conteudo/imagens/noticias/luvo_discruco_dp_governador_do_zaire.jpeg",
+      "/conteudo/imagens/noticias/luvo_momento_corte_fita.jpeg",
+      "/conteudo/imagens/noticias/luvo_momento_do_hino.jpeg",
+      "/conteudo/imagens/noticias/luvo_momento.jpeg",
+      "/conteudo/imagens/noticias/luvo_evento.jpeg",
+      "/conteudo/imagens/noticias/luvo_comprimento_da_chegada.jpeg",
+      "/conteudo/imagens/noticias/luvo_chegada.jpeg",
+      "/conteudo/imagens/noticias/luvo_momento_do_evento.jpeg",
+      "/conteudo/imagens/noticias/luvo_momento_do_evento_entrevista.jpeg",
+    ],
   },
   {
     id: "n8",
@@ -333,7 +347,7 @@ export const MOCK_NEWS: NewsItem[] = [
       "Coordenador da UTC (CGCF) realiza visita ao GGPN para fortalecimento institucional",
     excerpt:
       "O Coordenador da Unidade Técnica de Coordenação (UTC – CGCF) visitou o GGPN com o objetivo de promover a cooperação e o alinhamento estratégico entre as equipas.",
-    date: "20 Fevereiro 2026",
+    date: "17 Fevereiro 2026",
     category: "Institucional",
     Descric:
       "No âmbito do reforço da coordenação institucional e melhoria dos processos de gestão de projetos, o Coordenador da UTC (CGCF) realizou uma visita ao Gabinete de Gestão de Projetos Nacionais (GGPN). Durante a visita, foram discutidos projetos em curso, desafios operacionais e oportunidades de integração entre unidades, visando eficiência e resultados estratégicos.",
@@ -346,8 +360,7 @@ export const MOCK_NEWS: NewsItem[] = [
       A visita também serviu para identificar oportunidades de inovação, otimização de processos e articulação de esforços entre diferentes unidades institucionais.
 
       O Coordenador destacou a necessidade de consolidar práticas que fortaleçam a transparência, a eficiência e a eficácia dos projetos em execução.`,
-    Concl:
-      `A visita do Coordenador da UTC (CGCF) ao GGPN simboliza o compromisso institucional com a eficiência, a colaboração e a melhoria contínua dos processos de gestão de projetos nacionais.
+    Concl: `A visita do Coordenador da UTC (CGCF) ao GGPN simboliza o compromisso institucional com a eficiência, a colaboração e a melhoria contínua dos processos de gestão de projetos nacionais.
 
       Este encontro fortalece a articulação estratégica entre unidades, consolidando práticas que potencializam resultados e promovem uma visão integrada de desenvolvimento institucional.`,
     image: new URL(
@@ -358,5 +371,5 @@ export const MOCK_NEWS: NewsItem[] = [
       "/conteudo/imagens/noticias/Visita_Coordenador_UTC_GGPN_1.jpeg",
       import.meta.url,
     ).href,
-},
+  },
 ];
