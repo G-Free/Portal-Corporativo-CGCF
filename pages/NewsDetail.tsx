@@ -114,6 +114,7 @@ const NewsDetail: React.FC = () => {
             {newsItem.contentBody || ""}
           </div>
 
+
           {newsItem.conclusion && (
             <div className="mt-12 p-8 bg-slate-50 border-l-4 border-[#C5A059] rounded-sm">
               <h4 className="text-[#003366] text-xs font-black uppercase tracking-widest mb-4">
@@ -138,6 +139,17 @@ const NewsDetail: React.FC = () => {
           >
             {newsItem.Descric}
           </p>
+
+           {/* Múltiplas imagens */}
+          {newsItem.images && newsItem.images.length > 1 && (
+            <div className="grid md:grid-cols-2 gap-6 mb-16">
+              {newsItem.images.slice(1).map((img, index) => (
+                <div key={index} className="w-full aspect-[16/9] overflow-hidden rounded-sm shadow-lg">
+                  <img src={img} alt={`${newsItem.title} ${index + 4}`} className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          )}
 
           <h3 className="text-[#003366] text-xl font-black uppercase italic tracking-tight mb-6 mt-12">
             Integração Interinstitucional
