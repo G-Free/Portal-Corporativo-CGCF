@@ -640,7 +640,7 @@ const Interoperability: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* SIROF Card */}
             <div className="bg-slate-50 p-12 rounded-sm border border-slate-100 hover:shadow-2xl hover:border-[#003366] transition-all group">
               <div className="flex justify-between items-start mb-10">
