@@ -625,7 +625,7 @@ const Interoperability: React.FC = () => {
         </div>
       </section>
 
-      {/* Ecossistema Digital: SIROF e SGO */}
+      {/* Ecossistema Digital: SIROF, SGO e SAGRO */}
       <section className="py-24 bg-white px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -640,7 +640,7 @@ const Interoperability: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6">
             {/* SIROF Card */}
             <div className="bg-slate-50 p-12 rounded-sm border border-slate-100 hover:shadow-2xl hover:border-[#003366] transition-all group">
               <div className="flex justify-between items-start mb-10">
@@ -685,19 +685,18 @@ const Interoperability: React.FC = () => {
                 {t("sgo_desc")}
               </p>
               <div className="flex items-center gap-3 text-[9px] font-black uppercase text-slate-400 border-t border-slate-200 pt-8 group-hover:text-[#003366] transition-colors">
-                <Zap className="w-3.5 h-3.5" /> Optimização de Recursos em Tempo
-                Real
+                <Zap className="w-3.5 h-3.5" /> Optimização de Recursos em Tempo Real
               </div>
             </div>
 
-            {/* Sistema de analise e gestão de riscos Card */}
+            {/* SAGRO Card */}
             <div className="bg-slate-50 p-12 rounded-sm border border-slate-100 hover:shadow-2xl hover:border-[#003366] transition-all group">
               <div className="flex justify-between items-start mb-10">
                 <div className="w-16 h-16 bg-white border border-slate-100 rounded-sm flex items-center justify-center text-[#003366] shadow-sm group-hover:bg-[#003366] group-hover:text-white transition-all">
                   <Activity className="w-8 h-8" />
                 </div>
                 <span className="text-[9px] font-black bg-white px-4 py-1 rounded-full border border-slate-200 text-slate-400">
-                  Pilar I
+                  Pilar III
                 </span>
               </div>
               <h3 className="text-2xl font-black text-[#003366] uppercase italic mb-4 tracking-tighter leading-none">
