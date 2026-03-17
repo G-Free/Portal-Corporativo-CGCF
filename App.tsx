@@ -21,6 +21,7 @@ import Contact from "./pages/Contact";
 import AgencyDetail from "./pages/AgencyDetail";
 import Corridors from "./pages/Corridors";
 import Interoperability from "./pages/Interoperability";
+import FAQ from "./pages/FAQ";
 
 const App: React.FC = () => {
   return (
@@ -41,6 +42,7 @@ const App: React.FC = () => {
             <Route path="/legislacao" element={<Legislation />} />
             <Route path="/noticias" element={<News />} />
             <Route path="/noticias/:id" element={<NewsDetail />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/sirof" element={<SirofDashboard />} />

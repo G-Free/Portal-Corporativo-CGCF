@@ -24,14 +24,103 @@ import {
   Zap,
   Lock,
   Target,
+  Clock,
+  Plane,
+  Newspaper,
   Share2,
+  Microscope,
   Play,
   Workflow,
 } from "lucide-react";
 import { getLatestBorderInsights } from "../services/geminiService";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../LanguageContext";
-import apertodemao from "/conteudo/imagens/homepage.jpeg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Autoplay,
+  Pagination,
+  Navigation as SwiperNavigation,
+} from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import apertodemao from "/conteudo/imagens/home_page.jpeg";
+import imagemvideo from "../conteudo/imagens/Imagem1_logo.png";
+
+const CommitmentsSection: React.FC = () => {
+  const { t } = useLanguage();
+
+  const commitments = [
+    {
+      title: t("home_commitment_1_title"),
+      desc: t("home_commitment_1_desc"),
+      icon: Plane,
+      color: "bg-blue-500",
+    },
+    {
+      title: t("home_commitment_2_title"),
+      desc: t("home_commitment_2_desc"),
+      icon: Newspaper,
+      color: "bg-emerald-500",
+    },
+    {
+      title: t("home_commitment_3_title"),
+      desc: t("home_commitment_3_desc"),
+      icon: Clock,
+      color: "bg-[#C5A059]",
+    },
+    {
+      title: t("home_commitment_4_title"),
+      desc: t("home_commitment_4_desc"),
+      icon: Microscope,
+      color: "bg-indigo-500",
+    },
+    {
+      title: t("home_commitment_5_title"),
+      desc: t("home_commitment_5_desc"),
+      icon: Monitor,
+      color: "bg-rose-500",
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <span className="text-[10px] font-black uppercase text-[#C5A059] tracking-[0.4em] mb-4 block">
+            {t("home_commitments_subtitle")}
+          </span>
+          <h2 className="text-[#003366] text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-none">
+            {t("home_commitments_title")}
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {commitments.map((item, i) => (
+            <div
+              key={i}
+              className="group flex flex-col items-center text-center p-8 bg-slate-50 border border-slate-100 rounded-sm hover:bg-white hover:shadow-2xl hover:border-[#C5A059] transition-all duration-500"
+            >
+              <div
+                className={`w-16 h-16 ${item.color} text-white rounded-full flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}
+              >
+                <item.icon className="w-8 h-8" />
+              </div>
+              <h3 className="text-[#003366] text-xs font-black uppercase tracking-widest mb-4 leading-tight">
+                {item.title}
+              </h3>
+              <p className="text-slate-500 text-[10px] font-medium leading-relaxed italic">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Home: React.FC = () => {
   const [aiInsight, setAiInsight] = useState<{
@@ -48,8 +137,8 @@ const Home: React.FC = () => {
         language === "PT"
           ? "Sinergia e interoperabilidade tecnológica das fronteiras de Angola 2026"
           : language === "EN"
-          ? "Technological synergy and interoperability of Angola borders 2026"
-          : "Synergie technologique et interopérabilité das fronteiras de l'Angola 2026";
+            ? "Technological synergy and interoperability of Angola borders 2026"
+            : "Synergie technologique et interopérabilité das fronteiras de l'Angola 2026";
       const insight = await getLatestBorderInsights(query, language);
       setAiInsight(insight);
       setLoading(false);
@@ -80,12 +169,12 @@ const Home: React.FC = () => {
           const dateA = new Date(
             parseInt(partsA[2]),
             months[partsA[1]] || 0,
-            parseInt(partsA[0])
+            parseInt(partsA[0]),
           );
           const dateB = new Date(
             parseInt(partsB[2]),
             months[partsB[1]] || 0,
-            parseInt(partsB[0])
+            parseInt(partsB[0]),
           );
           return dateB.getTime() - dateA.getTime();
         } catch (e) {
@@ -135,46 +224,139 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="animate-in fade-in duration-700">
-
+    <div className="animate-in fade-in duration-180000">
       {/* Hero Section */}
       <section className="relative h-[650px] bg-slate-900 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            title="Angola's Border Infrastructure"
-            src={apertodemao}
-            className="w-full h-full object-cover opacity-50"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#003366] via-transparent to-transparent"></div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
-          <div className="max-w-3xl">
-            <h1 className="text-white text-4xl md:text-7xl font-black leading-[1.1] mb-8 tracking-tighter uppercase italic">
-              {t("hero_title").split(" ")[0]}{" "}
-              <br />
-              <span className="text-[#C5A059]">
-                {t("hero_title").split(" ").slice(1).join(" ")}
-              </span>
-            </h1>
-            <p className="text-slate-200 text-lg md:text-xl font-medium mb-12 border-l-4 border-[#C5A059] pl-6 leading-relaxed max-w-2xl">
-              {t("hero_desc")}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/mapa"
-                className="bg-[#C5A059] hover:bg-[#b08b4a] text-white px-10 py-5 font-black rounded-sm text-[11px] uppercase tracking-widest transition-all inline-flex items-center gap-4 shadow-xl"
-              >
-                {t("btn_borders")} <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/corredores"
-                className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md px-10 py-5 font-black rounded-sm text-[11px] uppercase tracking-widest transition-all inline-flex items-center gap-4 border border-white/20"
-              >
-                {t("btn_corridors")} <Navigation className="w-4 h-4" />
-              </Link>
+        <Swiper
+          modules={[Autoplay, Pagination, SwiperNavigation]}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          speed={3000}
+          pagination={{
+            clickable: true,
+            bulletClass: "swiper-pagination-bullet !bg-white/30 !opacity-100",
+            bulletActiveClass:
+              "!bg-[#C5A059] !w-8 !rounded-full transition-all duration-300",
+          }}
+          navigation={{
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+          }}
+          loop={true}
+          className="h-full w-full"
+        >
+          {/* Slide 1: Planejar, Coordenar e Supervisionar (Conteúdo da Imagem) */}
+          <SwiperSlide>
+            <div className="relative h-full w-full">
+              <div className="absolute inset-0">
+                <img
+                  title="CGCF Meeting"
+                  src={apertodemao}
+                  className="w-full h-full object-cover opacity-40"
+                  alt="Comité de Gestão Coordenada de Fronteiras"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#003366] via-transparent to-transparent"></div>
+              </div>
+              <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
+                <div className="max-w-4xl">
+                  <h1 className="text-white text-5xl md:text-5xl font-black leading-[0.9] mb-8 tracking-tighter uppercase italic">
+                    {t("hero_title").split(",")[0]},<br />
+                    <span className="text-[#C5A059]">
+                      {t("hero_title").split(",")[1]}
+                    </span>
+                  </h1>
+                  <p className="text-slate-200 text-lg md:text-xl font-medium mb-12 border-l-4 border-[#C5A059] pl-8 leading-relaxed max-w-2xl">
+                    {t("hero_desc")}
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <Link
+                      to="/mapa"
+                      className="bg-[#C5A059] hover:bg-[#b08b4a] text-white px-10 py-5 font-black rounded-sm text-[11px] uppercase tracking-widest transition-all inline-flex items-center gap-4 shadow-xl"
+                    >
+                      {t("btn_borders")} <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <Link
+                      to="/corredores"
+                      className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md px-10 py-5 font-black rounded-sm text-[11px] uppercase tracking-widest transition-all inline-flex items-center gap-4 border border-white/20"
+                    >
+                      {t("btn_corridors")} <Navigation className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
+          </SwiperSlide>
+
+          {/* Slides de Notícias de Destaque */}
+
+          {[...latestNews]
+            .sort(
+              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+            )
+            .slice(0, 3)
+            .map((news) => (
+              <SwiperSlide key={news.id}>
+                <div className="relative h-full w-full">
+                  <div className="absolute inset-0">
+                    {news.isVideo || news.image.endsWith(".mp4") ? (
+                      <video
+                        src={news.image}
+                        className="w-full h-full object-cover opacity-40"
+                        preload="metadata"
+                        muted
+                        playsInline
+                        onLoadedMetadata={(e) => {
+                          const video = e.currentTarget;
+                          video.currentTime = 1;
+                        }}
+                      />
+                    ) : (
+                      <img
+                        src={news.image}
+                        className="w-full h-full object-cover opacity-40"
+                        alt={news.title}
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#003366] via-transparent to-transparent"></div>
+                  </div>
+                  <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
+                    <div className="max-w-3xl">
+                      <div className="inline-flex items-center gap-2 bg-[#C5A059] text-white text-[9px] font-black uppercase px-4 py-1.5 mb-6 tracking-[0.2em]">
+                        <Zap className="w-3 h-3" /> {news.category}
+                      </div>
+                      <h2 className="text-white text-3xl md:text-4xl font-black leading-tight mb-6 tracking-tighter uppercase italic">
+                        {news.title}
+                      </h2>
+                      <p className="text-slate-200 text-lg font-medium mb-10 border-l-4 border-[#C5A059] pl-6 leading-relaxed line-clamp-2 max-w-2xl">
+                        {news.excerpt}
+                      </p>
+                      <Link
+                        to={`/noticias/${news.id}`}
+                        className="bg-white text-[#003366] hover:bg-[#C5A059] hover:text-white px-10 py-5 font-black rounded-sm text-[11px] uppercase tracking-widest transition-all inline-flex items-center gap-4 shadow-xl"
+                      >
+                        {t("read_more")} <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+
+          {/* Custom Navigation Buttons */}
+          <div className="absolute bottom-12 right-6 z-20 flex gap-2">
+            <button
+              title="Previous Slide"
+              className="swiper-button-prev-custom w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-[#C5A059] hover:border-[#C5A059] transition-all cursor-pointer"
+            >
+              <ArrowRight className="w-5 h-5 rotate-180" />
+            </button>
+            <button
+              title="Next Slide"
+              className="swiper-button-next-custom w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-[#C5A059] hover:border-[#C5A059] transition-all cursor-pointer"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
-        </div>
+        </Swiper>
       </section>
 
       {/* Visão Presidencial - Lobito Corridor Focus */}
@@ -380,13 +562,19 @@ const Home: React.FC = () => {
                 <div className="relative overflow-hidden h-56 bg-slate-100">
                   {item.isVideo || item.image.endsWith(".mp4") ? (
                     <div className="w-full h-full flex items-center justify-center relative">
-                      <img
-                        title={item.title}
-                        src="/conteudo/imagens/Imagem1_logo.png"
-                        className="w-full h-full object-cover opacity-60"
+                      <video
+                        src={item.image}
+                        className="w-full h-full object-cover opacity-80"
+                        preload="metadata"
+                        muted
+                        playsInline
+                        onLoadedMetadata={(e) => {
+                          const video = e.currentTarget;
+                          video.currentTime = 1;
+                        }}
                       />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Play className="w-12 h-12 text-[#003366] opacity-80 group-hover:scale-125 transition-transform" />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                        <Play className="w-12 h-12 text-white drop-shadow-lg group-hover:scale-125 transition-transform" />
                       </div>
                     </div>
                   ) : (
@@ -420,7 +608,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

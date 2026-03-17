@@ -1,11 +1,10 @@
-
 export interface BorderPost {
   id: string;
   name: string;
   province: string;
-  status: 'OPEN' | 'LIMITED' | 'CLOSED';
+  status: "OPEN" | "LIMITED" | "CLOSED";
   agencies: string[];
-  type: 'LAND' | 'MARITIME' | 'AIR';
+  type: "LAND" | "MARITIME" | "AIR";
 }
 
 export interface LegislationHistory {
@@ -19,7 +18,7 @@ export interface Legislation {
   title: string;
   description: string;
   date: string;
-  type: 'DECREE' | 'LAW' | 'MANUAL';
+  type: "DECREE" | "LAW" | "MANUAL";
   url: string;
   history?: LegislationHistory[];
 }
@@ -28,6 +27,12 @@ export interface NewsItem {
   id: string;
   title: string;
   excerpt: string;
+  Descric: string;
+  Corp: string;
+  Concl: string;
+  imagesub?: string;
+  isVideo?: boolean;
+  images?: string[];
   date: string;
   category: string;
   image: string;
@@ -44,18 +49,18 @@ export interface AuditLog {
   id: string;
   timestamp: string;
   user: string;
-  action: 'LOGIN' | 'SYNC' | 'CREATE' | 'UPDATE' | 'DELETE' | 'EXPORT';
+  action: "LOGIN" | "SYNC" | "CREATE" | "UPDATE" | "DELETE" | "EXPORT";
   details: string;
   ip: string;
-  severity: 'INFO' | 'WARNING' | 'CRITICAL';
+  severity: "INFO" | "WARNING" | "CRITICAL";
 }
 
 export interface DigitalAsset {
   id: string;
   title: string;
-  category: 'INFRA' | 'SECURITY' | 'LOGISTICS' | 'GOV';
+  category: "INFRA" | "SECURITY" | "LOGISTICS" | "GOV";
   url: string;
   resolution: string;
   uploadDate: string;
-  fileType?: 'JPG' | 'PNG' | 'RAW';
+  fileType?: "JPG" | "PNG" | "RAW";
 }

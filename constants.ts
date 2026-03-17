@@ -299,7 +299,7 @@ export const MOCK_NEWS: NewsItem[] = [
       "Posto Fronteiriço do Luvo Inaugurado como Primeiro Modelo de Paragem Única em Angola",
     excerpt:
       "No âmbito da modernização administrativa e da integração económica regional, foi inaugurado no dia 19 de Fevereiro de 2026 o Posto Fronteiriço do Luvo, tornando-se o primeiro posto de paragem única do país.",
-    date: "19 Fevereiro 2026",
+    date: "20 Fevereiro 2026",
     category: "Institucional",
     Descric:
       "No quadro da estratégia nacional de modernização das infra-estruturas públicas e reforço da gestão integrada de fronteiras, foi inaugurado, no dia 19 de Fevereiro de 2026, o Posto Fronteiriço do Luvo, na província do Zaire. A infra-estrutura passa a operar sob o modelo de paragem única, permitindo a centralização e harmonização dos procedimentos migratórios, aduaneiros e de fiscalização num único espaço operacional, com foco na eficiência, segurança e facilitação do comércio transfronteiriço.",
@@ -314,11 +314,10 @@ export const MOCK_NEWS: NewsItem[] = [
       Para além do impacto directo na mobilidade de pessoas e bens, a infra-estrutura assume carácter estratégico na integração económica regional.
 
       O projecto reflecte o compromisso contínuo com a modernização administrativa.`,
-    Concl:
-      `A inauguração do Posto Fronteiriço do Luvo simboliza um avanço estrutural na gestão das fronteiras nacionais. Mais do que uma obra física, representa um investimento estratégico em eficiência institucional, segurança, competitividade económica e cooperação regional.
-      A consolidação deste modelo abre caminho para futuras iniciativas de modernização em outros pontos fronteiriços do país, reforçando uma visão orientada para resultados, sustentabilidade e desenvolvimento integrado.`,    
-      image: new URL(
-      "/conteudo/imagens/noticias/Inaguração do posto do luvo.mp4",
+    Concl: `A inauguração do Posto Fronteiriço do Luvo simboliza um avanço estrutural na gestão das fronteiras nacionais. Mais do que uma obra física, representa um investimento estratégico em eficiência institucional, segurança, competitividade económica e cooperação regional.
+      A consolidação deste modelo abre caminho para futuras iniciativas de modernização em outros pontos fronteiriços do país, reforçando uma visão orientada para resultados, sustentabilidade e desenvolvimento integrado.`,
+    image: new URL(
+      "/conteudo/imagens/noticias/Inaguração_do_posto_do_luvo_Video .mp4",
       import.meta.url,
     ).href,
     isVideo: true,
@@ -326,5 +325,133 @@ export const MOCK_NEWS: NewsItem[] = [
       "/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg",
       import.meta.url,
     ).href,
+    images: [
+      new URL(
+        "/conteudo/imagens/noticias/Inaguração do posto do luvo.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_do_evento_1.jpeg",
+        import.meta.url,
+      ).href,
+      new URL("/conteudo/imagens/noticias/luvo_placa.jpeg", import.meta.url)
+        .href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_discruco_da_ministra_do_minif.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_discruco_dp_governador_do_zaire.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_corte_fita.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_do_hino.jpeg",
+        import.meta.url,
+      ).href,
+      new URL("/conteudo/imagens/noticias/luvo_momento.jpeg", import.meta.url)
+        .href,
+      new URL("/conteudo/imagens/noticias/luvo_evento.jpeg", import.meta.url)
+        .href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_comprimento_da_chegada.jpeg",
+        import.meta.url,
+      ).href,
+      new URL("/conteudo/imagens/noticias/luvo_chegada.jpeg", import.meta.url)
+        .href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_do_evento.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/luvo_momento_do_evento_entrevista.jpeg",
+        import.meta.url,
+      ).href,
+    ],
+  },
+  {
+    id: "n8",
+    title:
+      "Coordenador da UTC (CGCF) realiza visita ao GGPN para fortalecimento institucional",
+    excerpt:
+      "O Coordenador da Unidade Técnica de Coordenação (UTC – CGCF) visitou o GGPN com o objetivo de promover a cooperação e o alinhamento estratégico entre as equipas.",
+    date: "17 Fevereiro 2026",
+    category: "Institucional",
+    Descric:
+      "No âmbito do reforço da coordenação institucional e melhoria dos processos de gestão de projetos, o Coordenador da UTC (CGCF) realizou uma visita ao Gabinete de Gestão de Projetos Nacionais (GGPN). Durante a visita, foram discutidos projetos em curso, desafios operacionais e oportunidades de integração entre unidades, visando eficiência e resultados estratégicos.",
+    Corp: `A visita contou com reuniões com a equipa do GGPN, apresentação de projetos em desenvolvimento e sessões de diálogo sobre metodologias de gestão integrada.
+
+      Foram abordadas soluções para melhoria da eficiência operacional, integração tecnológica e gestão de riscos nos projetos conduzidos pelas equipas.
+
+      O encontro reforçou a importância da colaboração entre UTC e GGPN, promovendo alinhamento estratégico e troca de experiências entre os profissionais envolvidos.
+
+      A visita também serviu para identificar oportunidades de inovação, otimização de processos e articulação de esforços entre diferentes unidades institucionais.
+
+      O Coordenador destacou a necessidade de consolidar práticas que fortaleçam a transparência, a eficiência e a eficácia dos projetos em execução.`,
+    Concl: `A visita do Coordenador da UTC (CGCF) ao GGPN simboliza o compromisso institucional com a eficiência, a colaboração e a melhoria contínua dos processos de gestão de projetos nacionais.
+
+      Este encontro fortalece a articulação estratégica entre unidades, consolidando práticas que potencializam resultados e promovem uma visão integrada de desenvolvimento institucional.`,
+    image: new URL(
+      "/conteudo/imagens/noticias/Visita_Coordenador_UTC_GGPN.jpeg",
+      import.meta.url,
+    ).href,
+    imagesub: new URL(
+      "/conteudo/imagens/noticias/Visita_Coordenador_UTC_GGPN_1.jpeg",
+      import.meta.url,
+    ).href,
+  },
+  {
+    id: "n9",
+    title:
+      "6.ª REUNIÃO ANUAL: COMITÉ DE GESTÃO COORDENADA DE FRONTEIRAS ALINHA PRIORIDADES ESTRATÉGICAS NACIONAIS",
+    excerpt:
+      "O Comité de Gestão Coordenada de Fronteiras (CGCF) reforçou o alinhamento estratégico nacional durante a 6.ª Reunião Anual, avaliando progressos, desafios e planos para 2026.",
+    date: "24 Fevereiro 2026",
+    category: "Institucional",
+    Descric: ` O Comité de Gestão Coordenada de Fronteiras (CGCF) passa a dispor de meios para apoiar as actividades de controlo nas fronteiras nacionais, em particular de gestão e facilitação do comércio no Corredor do Lobito, no âmbito do projecto “Diversifica Mais (D+)", liderado pelo Ministério do Planeamento (MINPLAN). O apoio internacional inclui financiamento do Banco Mundial e recursos logísticos e tecnológicos destinados a aumentar a eficácia das operações fronteiriças.`,
+    Corp: `A reunião contou com a presença da Ministra das Finanças e Coordenadora-Geral do Comité e do Ministro do Interior, Vice-Coordenador, consolidando um espaço de concertação institucional de alto nível.
+
+  Foram avaliados os progressos de 2025, identificados constrangimentos operacionais e definidos mecanismos de cooperação mais eficazes entre os órgãos de fronteira, com foco na segurança, facilitação do comércio e mobilidade de pessoas e bens.
+
+  Entre os recursos alocados estão viaturas e motorizadas 4x4, embarcações, computadores, rádios de comunicação e contentores adaptados para escritórios. Está prevista também a contratação de consultoria para interoperabilidade dos sistemas fronteiriços, com ênfase em inteligência e gestão de risco.
+
+  O encontro destacou a importância do reforço institucional e da coordenação operacional, com especial atenção às localidades do Luvo e do Luau, priorizando eficiência, fiscalização e controlo aduaneiro, migratório e sanitário.  
+
+  O projecto “Diversifica Mais (D+)”, implementado pelo MINPLAN entre 2024 e 2029, visa acelerar a diversificação económica, reduzir a dependência do petróleo, criar emprego no sector privado e MPMEs, além de ampliar o acesso ao financiamento, com atenção particular às mulheres empreendedoras.`,
+    Concl: `
+  A 6.ª Reunião Anual do CGCF simboliza o compromisso institucional com a eficiência, integração e melhoria contínua na gestão das fronteiras nacionais.
+
+  Este encontro fortalece a articulação estratégica entre órgãos, consolida práticas operacionais e promove uma visão integrada de desenvolvimento institucional, garantindo segurança, facilitação do comércio e mobilidade regular de pessoas e bens.`,
+    image: new URL(
+      "/conteudo/imagens/noticias/foto de familia da 6º Reunião Anual.jpeg",
+      import.meta.url,
+    ).href,
+    imagesub: new URL(
+      "/conteudo/imagens/noticias/discruco_de_final_6_reuniao.jpeg",
+      import.meta.url,
+    ).href,
+    images: [
+      new URL(
+        "/conteudo/imagens/noticias/discurço de abertura.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/momento_do_evento_6º_reunião.jpeg",
+        import.meta.url,
+      ).href,
+      new URL("/conteudo/imagens/noticias/momento_do_evento_6º_reunião_1.jpeg", import.meta.url)
+        .href,
+      new URL(
+        "/conteudo/imagens/noticias/momento_do_evento_6º_reunião_2.jpeg",
+        import.meta.url,
+      ).href,
+      new URL(
+        "/conteudo/imagens/noticias/momento_do_evento_6º_reunião_3.jpeg",
+        import.meta.url,
+      ).href,      
+    ],
   },
 ];
