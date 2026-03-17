@@ -263,6 +263,8 @@ export const translations = {
     sirof_desc:
       "Sistema centralizado sob tutela do Comité de Gestão Coordenada de Fronteiras (CGCF) para registro, auditoria e coordenação de ocorrências em postos fronteiriços.",
     sgo_full_name: "Sistema de Gestão de Operações (Interno)",
+    SAGRO_full_name: "Sistema de Análise e Gestão de Riscos Operacionais",
+    SAGRO_desc: "Sistema de análise e gestão de riscos operacionais para suporte à tomada de decisão estratégica.",
     sgo_desc:
       "Ferramenta de uso restrito do Comité para monitorização estratégica de fluxos, alocação de recursos e inteligência operativa em tempo real.",
     organogram_title: "Organigrama Institucional",
