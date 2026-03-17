@@ -690,6 +690,57 @@ const Interoperability: React.FC = () => {
               </div>
             </div>
           </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Sistema de analise e gestão de riscos Card */}
+            <div className="bg-slate-50 p-12 rounded-sm border border-slate-100 hover:shadow-2xl hover:border-[#003366] transition-all group">
+              <div className="flex justify-between items-start mb-10">
+                <div className="w-16 h-16 bg-white border border-slate-100 rounded-sm flex items-center justify-center text-[#003366] shadow-sm group-hover:bg-[#003366] group-hover:text-white transition-all">
+                  <Activity className="w-8 h-8" />
+                </div>
+                <span className="text-[9px] font-black bg-white px-4 py-1 rounded-full border border-slate-200 text-slate-400">
+                  Pilar I
+                </span>
+              </div>
+              <h3 className="text-2xl font-black text-[#003366] uppercase italic mb-4 tracking-tighter leading-none">
+                SAGRO
+              </h3>
+              <p className="text-[#C5A059] text-[10px] font-black uppercase tracking-widest mb-6">
+                {t("SAGRO_full_name")}
+              </p>
+              <p className="text-slate-500 text-sm font-medium leading-relaxed italic mb-10">
+                {t("SAGR_desc")}
+              </p>
+              <div className="flex items-center gap-3 text-[9px] font-black uppercase text-slate-400 border-t border-slate-200 pt-8 group-hover:text-[#003366] transition-colors">
+                <Lock className="w-3.5 h-3.5" /> Canal Seguro e Auditado
+              </div>
+            </div>
+
+            {/* SGO Card */}
+            <div className="bg-slate-50 p-12 rounded-sm border border-slate-100 hover:shadow-2xl hover:border-[#003366] transition-all group">
+              <div className="flex justify-between items-start mb-10">
+                <div className="w-16 h-16 bg-white border border-slate-100 rounded-sm flex items-center justify-center text-[#003366] shadow-sm group-hover:bg-[#003366] group-hover:text-white transition-all">
+                  <Monitor className="w-8 h-8" />
+                </div>
+                <span className="text-[9px] font-black bg-white px-4 py-1 rounded-full border border-slate-200 text-slate-400">
+                  Pilar II
+                </span>
+              </div>
+              <h3 className="text-2xl font-black text-[#003366] uppercase italic mb-4 tracking-tighter leading-none">
+                SGO
+              </h3>
+              <p className="text-[#C5A059] text-[10px] font-black uppercase tracking-widest mb-6">
+                {t("sgo_full_name")}
+              </p>
+              <p className="text-slate-500 text-sm font-medium leading-relaxed italic mb-10">
+                {t("sgo_desc")}
+              </p>
+              <div className="flex items-center gap-3 text-[9px] font-black uppercase text-slate-400 border-t border-slate-200 pt-8 group-hover:text-[#003366] transition-colors">
+                <Zap className="w-3.5 h-3.5" /> Optimização de Recursos em Tempo
+                Real
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
